@@ -1,6 +1,6 @@
 #RarGuile
 
-Olá nobres guerreiros!
+<b>Olá Nobres guerreiros!</b>
 
 Aqui estamos chegando na nossa finalização de uma grande etapa de nossas vidas, fico extremamente feliz em saber que meus companheiros
 irão me acompanhar nesta última aventura de nossa dungeon chamada " Raro Academy ", vamos enfrentar este desafio juntos, e realizar nosso
