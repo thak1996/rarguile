@@ -12,7 +12,7 @@ observação constante de nossos deuses em nosso mundo: GustaDev, Kaio, Marco, C
 Tutoriais Básicos:
 Realizei a criação de Issues para trabalharmos! Para está situação, seguiremos da seguinte forma:
 
-- Abrir página principal do projeto
+- Abrir página principal do <a href="https://gitlab.com/thak1996/rarguile">projeto</a>
 - Na esquerda, terá um botão de Issues -> Ao passar o mouse, ele irá exibir uma janela com opções -> Selecione "Painéis"<br>
   Irá exibir uma nova tela, nesta tela teremos painéis como: To do,To dev, Code Review, Testes e Done.
   Eu Franklyn, irei criar as Issues para serem criadas. <br>
