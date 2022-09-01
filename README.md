@@ -34,4 +34,3 @@ dê um clique único em cima da Issue, será aberto uma tela do lado direito, es
 " Responsável " e selecione " Atribuir a mim ", caso você comece a tarefa, clique na Issue e arraste para To Dev, caso tenha finalizado, mova para Code Review, e na parte de Code Review para frente, será feito por outra pessoa, aonde seu código será verificado, testado e movido para a done caso tudo tenha dado certo! Mas esteja atento, caso seu código esteja incorreto, será atribuida uma nova etiqueta " Reprovado " e será retornada novamente para To Dev!
 
 Mantenha seus Pull e Push sempre em dia, e Mãos a Obra!
-
