@@ -7,7 +7,7 @@ irão me acompanhar nesta última aventura de nossa dungeon chamada " Raro Acade
 sonho de entrar no mercado de Dev!
 
 Lembrando caros guerreiros, em nosso atual mundo <a href="https://gitlab.com/thak1996/rarguile">GitLab do projeto</a>, temos uma
-observação constante de nossos deuses em nosso mundo: GustaDev, Kaio, Marco, Cristian e Bebeto. Façam uso constante das Issues, lutaremos de forma Magnifica(Codando claro) e reinaremos neste Novo Mundo!
+observação constante de deuses em nosso mundo: GustaDev, Kaio, Marco, Cristian e Bebeto. Façam uso constante das Issues, lutaremos de forma Magnifica(Codando claro) e reinaremos neste Novo Mundo!
 
 Tutoriais Básicos:
 Realizei a criação de Issues para trabalharmos! Para está situação, seguiremos da seguinte forma:
