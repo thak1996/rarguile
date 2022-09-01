@@ -14,9 +14,8 @@ Realizei a criação de Issues para trabalharmos! Para está situação, seguire
 
 - Abrir página principal do <a href="https://gitlab.com/thak1996/rarguile">projeto</a>
 - Na esquerda, terá um botão de Issues -> Ao passar o mouse, ele irá exibir uma janela com opções -> Selecione "Painéis"<br>
-  Irá exibir uma nova tela, nesta tela teremos painéis como: To do,To dev, Code Review, Testes e Done.
-  Eu Franklyn, irei criar as Issues para serem criadas. <br>
-  OBS: Caso queira criar, sinta-se a vontade, me consulte para entender o funcionamento. <br>
+  Irá exibir uma nova tela, nesta tela teremos painéis como: To do,To dev, Code Review, Testes e Done. <br>
+  OBS: Eu Franklyn, irei criar as Issues para serem criadas. Caso queira criar, sinta-se a vontade, me consulte para entender o funcionamento. <br>
 - To do <br>
   Esta parte, nada mais é do que a lista de issues que temos a fazer.
 - To dev <br>
