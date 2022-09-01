@@ -13,19 +13,19 @@ Tutoriais Básicos:
 Realizei a criação de Issues para trabalharmos! Para está situação, seguiremos da seguinte forma:
 
 - Abrir página principal do projeto
-- Na esquerda, terá um botão de Issues -> Ao passar o mouse, ele irá exibir uma janela com opções -> Selecione "Painéis"
-  Irá exibir uma nova tela, nesta tela teremos painéis como: To do,To dev, Code Review, Testes e Done,
-  Eu Franklyn, irei criar as Issues para serem criadas.
-  OBS: Caso queira criar, sinta-se a vontade, me consulte para entender o funcionamento.
-- To do
+- Na esquerda, terá um botão de Issues -> Ao passar o mouse, ele irá exibir uma janela com opções -> Selecione "Painéis"<br>
+  Irá exibir uma nova tela, nesta tela teremos painéis como: To do,To dev, Code Review, Testes e Done.
+  Eu Franklyn, irei criar as Issues para serem criadas. <br>
+  OBS: Caso queira criar, sinta-se a vontade, me consulte para entender o funcionamento. <br>
+- To do <br>
   Esta parte, nada mais é do que a lista de issues que temos a fazer.
-- To dev
+- To dev <br>
   Esta parte nada mais é do que as Issues em desenvolvimento pelos participantes do grupo!
-- Code Review
+- Code Review <br>
   Está é uma das partes mais chatas, será feita a verificação do código.
-- Testes
+- Testes <br>
   Está parte é simples, aonde será feito os testes relacionados a implementação da feature que o Code Review está verificando.
-- Done
+- Done <br>
   Esta parte é simples também! É a parte aonde foi feito todos os processos para ser liberado a solicitação do Pull Request/Merge
 
 Agora que Todas as listas estão bem explicativas, irei agora explicar nosso uso diário, durante todo o processo de desenvolvimento
