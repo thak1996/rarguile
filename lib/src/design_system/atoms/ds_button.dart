@@ -8,11 +8,17 @@ class DsElevatedButton extends StatelessWidget {
     required this.child,
     required this.onPressed,
     this.disabled,
+    required this.textStyle,
+    required this.backColor,
+    required this.frontColor,
   }) : super(key: key);
 
   final Widget? child;
   final VoidCallback onPressed;
   final bool? disabled;
+  final Color backColor;
+  final Color frontColor;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +31,9 @@ class DsElevatedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: h6,
-          backgroundColor: primaryColor,
-          foregroundColor: whiteColor,
+          textStyle: textStyle,
+          backgroundColor: backColor,
+          foregroundColor: frontColor,
           disabledBackgroundColor: fillDisable,
           disabledForegroundColor: textDisable,
         ),

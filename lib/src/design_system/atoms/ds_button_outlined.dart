@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
 
 class DsOutlinedButton extends StatelessWidget {
   const DsOutlinedButton({
     Key? key,
     required this.child,
     required this.onPressed,
+    required this.color,
+    required this.textStyle,
   }) : super(key: key);
 
   final Widget child;
   final VoidCallback onPressed;
+  final Color color;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,8 @@ class DsOutlinedButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            textStyle: h6,
-            foregroundColor: primaryColor,
+            textStyle: textStyle,
+            foregroundColor: color,
             side: const BorderSide(width: 1, color: primaryColor)),
         child: child,
       ),
