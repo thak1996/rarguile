@@ -15,7 +15,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   TextEditingController loginController = TextEditingController();
-  TextEditingController senhaController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class _LoginPageState extends State<LoginPage> {
           decoration: const BoxDecoration(color: whiteColor),
           child: Padding(
             padding: const EdgeInsets.only(
-              right: 53,
-              left: 53,
+              right: 54,
+              left: 54,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,8 +36,11 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Image.asset('assets/images/RaroTube.png'),
                 SizedBox(height: screenSize(context).height * .046),
-                const Text('Seja bem-vindo à Raro Tube!', style: h5Primary),
-                SizedBox(height: screenSize(context).height * .089),
+                const Text(
+                  'Seja bem-vindo à Raro Tube!',
+                  style: h6Primary,
+                ),
+                SizedBox(height: screenSize(context).height * .090),
                 DsInputField(
                   controller: loginController,
                   hintText: 'Digite seu email',
@@ -46,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .014),
                 DsInputField(
-                  controller: senhaController,
+                  controller: passwordController,
                   hintText: 'Digite sua senha',
                   keyboardType: TextInputType.visiblePassword,
                   labelText: 'Digite sua senha',
