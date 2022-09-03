@@ -45,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: size.height * .014),
               DsInputField(
+                obscureText: true,
                 controller: senhaController,
                 hintText: 'Digite sua senha',
                 keyboardType: TextInputType.visiblePassword,

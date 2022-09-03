@@ -31,7 +31,10 @@ class DsOutlinedButton extends StatelessWidget {
             side: const BorderSide(width: 1, color: primaryColor)),
         child: Text(
           label,
-          style: textStyle ?? h6Primary.copyWith(color: whiteColor)
+          style: textStyle ??
+              h6Primary.copyWith(
+                color: whiteColor,
+              ),
         ),
       ),
     );
