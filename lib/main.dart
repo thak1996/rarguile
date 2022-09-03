@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/app.dart';
+import 'package:rarguile/myApp.dart';
 
-void main() {
-  runApp(const App());
-}
+void main() => runApp(MyApp());
