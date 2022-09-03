@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'src/features/splashpage/splashpage.dart';
+import 'package:rarguile/src/features/loginpage/loginpage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,8 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Livro sobre Flutter',
-      home: SplashArt(),
+      title: 'RaroTube',
+      home: LoginPage(),
     );
   }
 }

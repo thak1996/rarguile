@@ -1,5 +1,6 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
+import 'package:rarguile/src/shared/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
   const SplashArt({super.key});
@@ -15,7 +16,9 @@ class _SplashArtState extends State<SplashArt> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(color: Color(0xFF343090)),
+        decoration: const BoxDecoration(
+          color: primaryColor,
+        ),
         child: Stack(
           alignment: Alignment.center,
           children: [
