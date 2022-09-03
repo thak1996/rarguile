@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rarguile/homePage.dart';
+
+import 'src/features/splashpage/splashpage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
