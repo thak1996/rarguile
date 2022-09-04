@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
@@ -70,7 +71,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 SizedBox(height: screenSize(context).height * .098),
                 DsOutlinedButton(
                   label: 'Cadastrar',
-                  onPressed: () {},
+                  onPressed: () {
+                    Modular.to.pushNamed('/registration/confirmation/');
+                  },
                 ),
               ],
             ),
