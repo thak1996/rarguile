@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
@@ -7,7 +8,7 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -68,7 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .066),
                 DsOutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Modular.to.pushNamed('/home');
+                  },
                   label: 'Entrar',
                   backGroundColor: whiteColor,
                   textStyle: h6Primary,
@@ -76,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: screenSize(context).height * .014),
                 DsOutlinedButton(
                   label: 'Cadastrar',
-                  onPressed: () {},
+                  onPressed: () {
+                    Modular.to.pushNamed('/registration/');
+                  },
                 ),
               ],
             ),
