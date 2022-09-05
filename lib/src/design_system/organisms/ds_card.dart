@@ -24,27 +24,32 @@ class DsCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: fillBackground,
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DsText(text: title, style: subTitleBold),
-                DsText(text: date, style: subTitleBoldPrimary),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6.0),
-              child: TextWidget(
-                finalText: text,
+      child: InkWell(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  DsText(text: title, style: subTitleBold),
+                  DsText(text: date, style: subTitleBoldPrimary),
+                ],
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6.0),
+                child: TextWidget(
+                  finalText: text,
+                ),
+              ),
+            ],
+          ),
         ),
+        onTap: () {
+          Navigator.push(context, route!);
+        },
       ),
     );
   }
