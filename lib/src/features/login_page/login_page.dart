@@ -59,7 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Modular.to.pushNamed('/changePass/');
+                    },
                     child: const DsText(
                       text: 'Esqueci minha senha',
                       style: TextStyle(
@@ -70,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: screenSize(context).height * .066),
                 DsOutlinedButton(
                   onPressed: () {
-                     Modular.to.pushNamed('/home');
+                    Modular.to.pushNamed('/home/');
                   },
                   label: 'Entrar',
                   backGroundColor: whiteColor,

@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
-class ForgetPasswordPageTwo extends StatefulWidget {
-  const ForgetPasswordPageTwo({super.key});
+class ForgetPasswordPageOne extends StatefulWidget {
+  const ForgetPasswordPageOne({super.key});
 
   @override
-  State<ForgetPasswordPageTwo> createState() => _ForgetPasswordPageTwoState();
+  State<ForgetPasswordPageOne> createState() => _ForgetPasswordPageOneState();
 }
 
-class _ForgetPasswordPageTwoState extends State<ForgetPasswordPageTwo> {
+class _ForgetPasswordPageOneState extends State<ForgetPasswordPageOne> {
   TextEditingController codeController = TextEditingController();
 
   @override
@@ -36,21 +37,23 @@ class _ForgetPasswordPageTwoState extends State<ForgetPasswordPageTwo> {
                   right: screenSize(context).width * .25,
                 ),
                 child: const Text(
-                  'Digite seu código de confirmação enviado para seu email.',
+                  'Digite seu email.',
                   style: h5Primary,
                 ),
               ),
-              SizedBox(height: screenSize(context).height * .1),
+              SizedBox(height: screenSize(context).height * .2),
               DsInputField(
                 controller: codeController,
-                hintText: 'Digite o código aqui',
-                keyboardType: TextInputType.number,
-                labelText: 'Digite o código aqui',
+                hintText: 'Digite o seu email',
+                keyboardType: TextInputType.emailAddress,
+                labelText: 'Digite o seu email',
               ),
               SizedBox(height: screenSize(context).height * .1),
               DsOutlinedButton(
                 label: 'Confirmar',
-                onPressed: () {},
+                onPressed: () {
+                  Modular.to.pushNamed('/changePass/confirmation/');
+                },
               ),
             ],
           ),
