@@ -10,6 +10,7 @@ class DsText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      overflow: TextOverflow.fade,
       style: style,
     );
   }

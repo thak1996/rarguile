@@ -14,7 +14,7 @@ const TextStyle h6Primary = TextStyle(
     fontFamily: "Poppins",
     color: primaryColor);
 
-const TextStyle iputPrimary = TextStyle(
+const TextStyle inputPrimary = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w500,
     fontFamily: "Poppins",
@@ -39,7 +39,7 @@ const TextStyle subTitleBoldPrimary = TextStyle(
     fontFamily: "Poppins",
     color: primaryColor);
 
-const TextStyle iputBoldPrimary = TextStyle(
+const TextStyle inputBoldPrimary = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.bold,
     fontFamily: "Poppins",
@@ -53,7 +53,7 @@ const TextStyle subTitleBoldOceano = TextStyle(
     color: azulOceano);
 
 //Black
-const TextStyle iputBlack = TextStyle(
+const TextStyle inputBlack = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w400,
     fontFamily: "Poppins",
@@ -73,14 +73,14 @@ const TextStyle subTitleGrey = TextStyle(
     fontFamily: "Poppins",
     color: textDisable);
 
-const TextStyle iputBlackGrey = TextStyle(
+const TextStyle inputBlackGrey = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w400,
     fontFamily: "Poppins",
     color: textDisable);
 
 //Alert
-const TextStyle iputBlackAlert = TextStyle(
+const TextStyle inputBlackAlert = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w400,
     fontFamily: "Poppins",
@@ -102,7 +102,7 @@ const TextStyle h6 =
 
 const TextStyle subTitle =
     TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins");
-const TextStyle iput =
+const TextStyle input =
     TextStyle(fontSize: 11, fontWeight: FontWeight.w400, fontFamily: "Poppins");
 const TextStyle miniText =
     TextStyle(fontSize: 9, fontWeight: FontWeight.w400, fontFamily: "Poppins");
@@ -112,5 +112,5 @@ const TextStyle h4Bbold =
     TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: "Poppins");
 const TextStyle subTitleBold =
     TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: "Poppins");
-const TextStyle iputBold =
+const TextStyle inputBold =
     TextStyle(fontSize: 11, fontWeight: FontWeight.bold, fontFamily: "Poppins");

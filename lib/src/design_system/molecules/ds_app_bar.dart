@@ -13,12 +13,10 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: whiteColor,
       elevation: 0,
-      bottom: PreferredSize(
-          preferredSize: preferredSize,
-          child: DsText(text: title, style: h5Primary)),
+      title: DsText(text: title, style: h5Primary),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => const Size.fromHeight(100);
 }
