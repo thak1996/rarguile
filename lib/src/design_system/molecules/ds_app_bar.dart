@@ -11,12 +11,25 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: true,
       backgroundColor: whiteColor,
       elevation: 0,
-      title: DsText(text: title, style: h5Primary),
+      title: Align(
+        alignment: Alignment.bottomLeft,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Divider(
+              height: 40,
+              color: whiteColor,
+            ),
+            DsText(text: title, style: h5Primary),
+          ],
+        ),
+      ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(70);
 }
