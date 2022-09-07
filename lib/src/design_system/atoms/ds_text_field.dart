@@ -11,7 +11,6 @@ class DsTextField extends StatelessWidget {
     required this.hintText,
     this.minLines,
     this.maxLines,
-    required this.autofocus,
     required this.onPressed,
     required this.icon,
   }) : super(key: key);
@@ -21,7 +20,6 @@ class DsTextField extends StatelessWidget {
   final String hintText;
   final int? minLines;
   final int? maxLines;
-  final bool autofocus;
   final VoidCallback onPressed;
   final Widget icon;
 
@@ -62,7 +60,7 @@ class DsTextField extends StatelessWidget {
         controller: controller,
         minLines: minLines,
         maxLines: maxLines,
-        autofocus: autofocus,
+
         // maxLengthEnforcement: MaxLengthEnforcement.enforced,
       ),
     );
