@@ -9,7 +9,6 @@ import 'package:rarguile/src/features/splash_page/splashpage.dart';
 
 class AppModule extends Module {
   @override
-  @override
   List<Bind<Object>> get binds => [];
 
   @override
@@ -22,15 +21,14 @@ class AppModule extends Module {
           '/login/',
           module: LoginPageModule(),
         ),
-        //TODO: Página de Home com login // Alterar module de cada um
         ModuleRoute(
           '/home/users/',
-          module: RegistrationPageModule(),
+          module:
+              RegistrationPageModule(), //TODO: Página de Home com login // Alterar module de cada um
         ),
-        //TODO: Página de Home sem login
         ModuleRoute(
           '/home/visitant/',
-          module: RegistrationPageModule(),
+          module: RegistrationPageModule(),//TODO: Página de Home sem login
         ),
         ModuleRoute(
           '/registration/',
