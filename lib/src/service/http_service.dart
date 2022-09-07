@@ -16,26 +16,22 @@ class HttpService implements ApiService {
 
   @override
   Future delete({required String route}) {
-    // TODO: implement delete
     throw UnimplementedError();
   }
 
 
   @override
   Future patch({required String route, Map? body}) {
-    // TODO: implement patch
     throw UnimplementedError();
   }
 
   @override
   Future post({required String route, Map<String, dynamic>? body}) {
-    // TODO: implement post
     throw UnimplementedError();
   }
 
   @override
   Future put({required String route, Map? body}) {
-    // TODO: implement put
     throw UnimplementedError();
   }
   

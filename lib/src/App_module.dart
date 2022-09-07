@@ -1,7 +1,11 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/features/loginpage/login_page_module.dart';
-import 'package:rarguile/src/features/registrationpage/registration_page_module.dart';
-import 'package:rarguile/src/features/splashpage/splashpage.dart';
+import 'package:rarguile/src/features/confirm_registration_page/confirm_registration_page_module.dart';
+import 'package:rarguile/src/features/forget_password_page_one/forget_password_page_one_module.dart';
+import 'package:rarguile/src/features/forget_password_page_three/forget_password_page_three_module.dart';
+import 'package:rarguile/src/features/forget_password_page_two/forget_password_page_two_module.dart';
+import 'package:rarguile/src/features/login_page/login_page_module.dart';
+import 'package:rarguile/src/features/registration_page/registration_page_module.dart';
+import 'package:rarguile/src/features/splash_page/splashpage.dart';
 
 class AppModule extends Module {
   @override
@@ -12,7 +16,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => const SplashArt(),
+          child: (context, args) => SplashArt(),
         ),
         ModuleRoute(
           '/login/',
@@ -32,25 +36,21 @@ class AppModule extends Module {
           '/registration/',
           module: RegistrationPageModule(),
         ),
-        ///TODO: Página de confirmação de código para cadastro
         ModuleRoute(
           '/registration/confirmation/',
-          module: RegistrationPageModule(),
+          module: ConfirmRegistrationPageModule(),
         ),
-        ///TODO: Página de alteração de senha
         ModuleRoute(
           '/changePass/',
-          module: RegistrationPageModule(),
+          module: ForgetPasswordPageOneModule(),
         ),
-        ///TODO: Página de confirmação de código para alteração de senha
         ModuleRoute(
           '/changePass/confirmation/',
-          module: RegistrationPageModule(),
+          module: ForgetPasswordPageTwoModule(),
         ),
-        ///TODO: Página de confirmação de nova senha
         ModuleRoute(
           '/changePass/confirmation/newPass/',
-          module: RegistrationPageModule(),
+          module: ForgetPasswordPageThreeModule(),
         ),
       ];
 }

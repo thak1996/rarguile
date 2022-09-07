@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/datasource/datasource.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
@@ -19,11 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController loginController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  late final VideosDataSource datasource;
 
   @override
   void initState() {
-    datasource = Modular.get<VideosDataSource>();
     setState(() {});
     super.initState();
   }
@@ -69,7 +66,9 @@ class _LoginPageState extends State<LoginPage> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Modular.to.pushNamed('/changePass/');
+                    },
                     child: const DsText(
                       text: 'Esqueci minha senha',
                       style: TextStyle(
@@ -80,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: screenSize(context).height * .066),
                 DsOutlinedButton(
                   onPressed: () {
-                     Modular.to.pushNamed('/home/');
+                    Modular.to.pushNamed('/home/');
                   },
                   label: 'Entrar',
                   backGroundColor: whiteColor,
