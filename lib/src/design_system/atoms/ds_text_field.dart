@@ -31,6 +31,8 @@ class DsTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextField(
         decoration: InputDecoration(
+          filled: true,
+          fillColor: whiteColor,
           contentPadding:
               const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           suffixIcon: IconButton(
@@ -50,11 +52,13 @@ class DsTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: azulVioleta, width: 1.5),
+            borderSide: const BorderSide(color: primaryColor, width: 1.5),
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        style: const TextStyle(color: primaryColor),
+        style: const TextStyle(
+          color: primaryColor,
+        ),
         controller: controller,
         minLines: minLines,
         maxLines: maxLines,
