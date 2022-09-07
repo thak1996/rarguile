@@ -7,9 +7,9 @@ import 'package:rarguile/widgets/text_widget.dart';
 class DsCard extends StatelessWidget {
   const DsCard({
     super.key,
+    this.route,
     required this.title,
     required this.text,
-    this.route,
     required this.date,
   });
 
