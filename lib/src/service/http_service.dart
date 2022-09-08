@@ -5,7 +5,9 @@ import 'package:rarguile/src/service/api_service.dart';
 
 class HttpService implements ApiService {
   var baseURL = "44.199.200.211:3325";
-
+  String? token = "";
+  var route = "/videos";
+               
   @override
   Future get({required String route, Map<String, dynamic>? params}) async {
     Uri url = Uri.http(baseURL, route);

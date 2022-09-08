@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rarguile/src/service/http_service.dart';
+import 'package:mockito/annotations.dart';
+import 'package:rarguile/src/data_source/videos_data_source.dart';
 
+
+@GenerateMocks([VideosDataSource])
 void main() {
-  HttpService service = HttpService();
-
   test(
-    'testando retorno da api',
+    'test do repositório',
     () {
-      service.get(route: '/videos');
     },
   );
 }
