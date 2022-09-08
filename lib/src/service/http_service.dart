@@ -1,16 +1,23 @@
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:rarguile/src/service/api_service.dart';
+
+// void main() async {
+//   final product = HttpService();
+//   final response = await product.get(route: '/videos');
+//   final json = jsonDecode(response.body);
+//   print(response.body);
+// }
 
 class HttpService implements ApiService {
   
   var baseURL = "44.199.200.211:3325";
+  String? token = "";
+  var route = "/videos";
                
   @override
-  Future get({required String route, Map<String, dynamic>? params}) async {
-    Uri url = Uri.http(baseURL, route);
-    var response = await http.get(url);
+  Future get({Map<String, dynamic>? params}) async {
+    Uri url = Uri.http(baseURL, "/videos");
+    var response = await http.get(url, headers: {"Authorization": "Bearer $token"});
     return response;
   }
 

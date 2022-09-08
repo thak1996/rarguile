@@ -2,6 +2,7 @@ import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/datasource/datasource.dart';
+import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
@@ -12,7 +13,7 @@ class SplashArt extends StatefulWidget {
 }
 
 class _SplashArtState extends State<SplashArt> {
-  
+
 
   @override
   void initState() {

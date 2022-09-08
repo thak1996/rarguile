@@ -7,7 +7,7 @@ void main() {
   test(
     'testando retorno da api',
     () {
-      service.get(route: '/videos');
+      service.get();
     },
   );
 }
