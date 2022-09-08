@@ -39,16 +39,22 @@ class _VideoWidgetState extends State<VideoWidget> {
       child: Column(
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(3),
             child: AspectRatio(
               aspectRatio: videoController.value.aspectRatio,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[
                   VideoPlayer(videoController),
-                  ClosedCaption(text: videoController.value.caption.text),
                   _ControlsOverlay(controller: videoController),
-                  VideoProgressIndicator(videoController, allowScrubbing: true),
+                  VideoProgressIndicator(
+                    videoController,
+                    allowScrubbing: true,
+                    colors: const VideoProgressColors(
+                      playedColor: azulOceano,
+                      bufferedColor: whiteColor,
+                    ),
+                  ),
                 ],
               ),
             ),

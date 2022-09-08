@@ -34,7 +34,7 @@ const TextStyle subTitlePrimary = TextStyle(
 
 //primary bold
 const TextStyle subTitleBoldPrimary = TextStyle(
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
     fontFamily: "Poppins",
     color: primaryColor);

@@ -46,7 +46,7 @@ class _HideShowState extends State<HideShow> {
           Visibility(
             visible: isVisible,
             child: const DsComment(),
-          )
+          ),
         ],
       ),
     );

@@ -20,18 +20,20 @@ class DsDescription extends StatefulWidget {
 }
 
 class _DsDescriptionState extends State<DsDescription> {
+  bool isFavorite = false;
+
+  void setFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isFavorite = false;
-
-    void setFavorite() {
-      setState(() {
-        isFavorite = !isFavorite;
-      });
-    }
-
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,8 +45,10 @@ class _DsDescriptionState extends State<DsDescription> {
                 style: subTitleBoldPrimary,
               ),
               IconButton(
+                splashRadius: 5,
                 icon: Icon(
-                    isFavorite ? (Icons.favorite) : (Icons.favorite_border)),
+                    isFavorite ? (Icons.favorite) : (Icons.favorite_border),
+                    size: 22),
                 color: azulVioleta,
                 onPressed: () {
                   setFavorite();

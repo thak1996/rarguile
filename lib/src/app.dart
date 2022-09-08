@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/design_system/organisms/ds_description.dart';
+import 'package:rarguile/src/design_system/organisms/ds_related.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
 import 'package:rarguile/widgets/hide_show_widget.dart';
@@ -22,9 +23,10 @@ class App extends StatelessWidget {
               DsDescription(
                 title: 'Abelha Africana',
                 description:
-                    'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+                    'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhafffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
               ),
               HideShow(),
+              DsRelated(),
             ],
           ),
         ],
