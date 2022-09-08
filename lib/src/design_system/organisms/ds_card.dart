@@ -30,12 +30,16 @@ class DsCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   DsText(text: title, style: subTitleBold),
-                  DsText(text: date, style: subTitleBoldPrimary),
+                  DsText(
+                    text: date,
+                    style: subTitleBoldPrimary.copyWith(
+                        fontWeight: FontWeight.w400),
+                  ),
                 ],
               ),
               Padding(

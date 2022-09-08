@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-
 class VideosModel {
   final String id;
   final String nome;
@@ -13,7 +11,7 @@ class VideosModel {
   final String dataPublicacao;
   final String topico;
   final List<String> tags;
-  
+
   VideosModel({
     required this.id,
     required this.nome,
@@ -44,18 +42,19 @@ class VideosModel {
 
   factory VideosModel.fromMap(Map<String, dynamic> map) {
     return VideosModel(
-        id: map['id'] as String,
-        nome: map['nome'] as String,
-        url: map['url'] as String,
-        thumbUrl: map['thumbUrl'] as String,
-        descricao: map['descricao'] as String,
-        createdAt: map['createdAt'] as String,
-        duracao: map['duracao'] as String,
-        dataPublicacao: map['dataPublicacao'] as String,
-        topico: map['topico'] as String,
-        tags: List<String>.from(
-          (map['tags'] as List<String>),
-        ));
+      id: map['id'] as String,
+      nome: map['nome'] as String,
+      url: map['url'] as String,
+      thumbUrl: map['thumbUrl'] as String,
+      descricao: map['descricao'] as String,
+      createdAt: map['createdAt'] as String,
+      duracao: map['duracao'] as String,
+      dataPublicacao: map['dataPublicacao'] as String,
+      topico: map['topico'] as String,
+      tags: List<String>.from(
+        (map['tags'] as List<String>),
+      ),
+    );
   }
 
   String toJson() => json.encode(toMap());

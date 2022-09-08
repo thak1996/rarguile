@@ -22,12 +22,6 @@ class _LoginPageState extends State<LoginPage> {
 
 
   @override
-  void initState() {
-    setState(() {});
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
@@ -89,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     textStyle: h6Primary,
                     onPressed: () {
                       formMasterKey.currentState!.validate()
-                          ? Modular.to.pushNamed('/home/')
+                          ? Modular.to.pushNamed('/home/users/')
                           : debugPrint('Dados incorretos, tente novamente!');
                     },
                   ),
