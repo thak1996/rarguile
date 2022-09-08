@@ -42,9 +42,11 @@ class _TextWidgetState extends State<TextWidget> {
                 Text(flag ? firstPart : widget.finalText),
                 InkWell(
                   onTap: () {
-                    setState(() {
-                      flag = !flag;
-                    });
+                    setState(
+                      () {
+                        flag = !flag;
+                      },
+                    );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,

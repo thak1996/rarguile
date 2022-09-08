@@ -10,7 +10,6 @@ class VideosModel {
   final String duracao;
   final String dataPublicacao;
   final String topico;
-  final List<String> tags;
 
   VideosModel({
     required this.id,
@@ -22,7 +21,6 @@ class VideosModel {
     required this.duracao,
     required this.dataPublicacao,
     required this.topico,
-    required this.tags,
   });
 
   Map<String, dynamic> toMap() {
@@ -36,7 +34,6 @@ class VideosModel {
       'duracao': duracao,
       'dataPublicacao': dataPublicacao,
       'topico': topico,
-      'tags': tags,
     };
   }
 
@@ -51,9 +48,6 @@ class VideosModel {
       duracao: map['duracao'] as String,
       dataPublicacao: map['dataPublicacao'] as String,
       topico: map['topico'] as String,
-      tags: List<String>.from(
-        (map['tags'] as List<String>),
-      ),
     );
   }
 
@@ -64,6 +58,6 @@ class VideosModel {
 
   @override
   String toString() {
-    return 'VideosModel(id: $id, nome: $nome, url: $url, thumbUrl: $thumbUrl, descricao: $descricao, createdAt: $createdAt, duracao: $duracao, dataPublicacao: $dataPublicacao, topico: $topico, tags: $tags)';
+    return 'VideosModel(id: $id, nome: $nome, url: $url, thumbUrl: $thumbUrl, descricao: $descricao, createdAt: $createdAt, duracao: $duracao, dataPublicacao: $dataPublicacao, topico: $topico)';
   }
 }

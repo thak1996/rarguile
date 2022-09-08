@@ -43,6 +43,7 @@ dependencies:
   animated_card: ^2.0.0
   shared_preferences: ^2.0.15
   video_player: ^2.4.7
+  slidy: ^4.0.3
 
 dev_dependencies:
   flutter_test:

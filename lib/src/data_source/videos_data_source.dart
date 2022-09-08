@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/model/video_model.dart';
+import 'package:rarguile/src/model/videos_model.dart';
 import 'package:rarguile/src/service/api_service.dart';
-import 'package:rarguile/src/shared/exceptions/failure.dart';
+import 'package:rarguile/src/shared/failure.dart';
 
 class VideosDataSource {
   final ApiService service;
@@ -12,7 +12,7 @@ class VideosDataSource {
   VideosDataSource(this.service);
 
   Future<List<VideosModel>> getAllVideos() async {
-    await Future.delayed(const Duration(seconds: 1));
+    // await Future.delayed(const Duration(seconds: 1));
     try {
       final response = await service.get(route: '/videos/');
       if (response.statusCode == 200) {
@@ -32,7 +32,7 @@ class VideosDataSource {
     } on FormatException {
       throw Failure(message: 'Estamos passando por dificuldades');
     } catch (e) {
-      throw Failure(message: 'Ocorreu um erro');
+      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/features/home_page_users/home_page_users.dart';
+import 'package:rarguile/features/registration_page/registration_page.dart';
 
-class HomePageUsersModule extends Module {
+class RegistrationPageModule extends Module {
   @override
   List<Bind<Object>> get binds => [];
 
@@ -9,7 +9,7 @@ class HomePageUsersModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => HomePageUsers(),
+          child: (context, args) => const RegistrationPage(),
         ),
       ];
 }

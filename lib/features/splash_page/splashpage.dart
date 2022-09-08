@@ -17,7 +17,9 @@ class _SplashArtState extends State<SplashArt> {
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
-    ).then((value) => Modular.to.pushReplacementNamed('/login/'));
+    ).then(
+      (value) => Modular.to.pushReplacementNamed('/login/'),
+    );
     super.initState();
   }
 

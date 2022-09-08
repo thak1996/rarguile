@@ -11,7 +11,7 @@ class HttpService implements ApiService {
     Uri url = Uri.http(baseURL, route);
     var response =
         await http.get(url, headers: {"Authorization": "Bearer $token"});
-    return response.body;
+    return response;
   }
 
   @override
