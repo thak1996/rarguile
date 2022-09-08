@@ -1,26 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/features/loginpage/login_page.dart';
-import 'package:rarguile/src/features/loginpage/login_page_test.dart';
-import 'package:rarguile/src/myApp.dart';
-import 'package:rarguile/src/myApp_module.dart';
-
-// void main() {
-//   runApp(ModularApp(module: AppModule(), child: const MyApp()));
-// }
-
+import 'package:rarguile/src/App.dart';
+import 'package:rarguile/src/App_module.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ModularApp(module: AppModule(), child: const App()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const HomePage(),
-    );
-  }
-}

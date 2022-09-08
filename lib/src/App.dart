@@ -3,14 +3,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/datasource/datasource.dart';
 import 'package:rarguile/src/service/http_service.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<App> createState() => _AppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {

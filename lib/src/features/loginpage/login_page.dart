@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: screenSize(context).height * .066),
                 DsOutlinedButton(
                   onPressed: () {
-                     Modular.to.pushNamed('/home/');
+                    Modular.to.pushNamed('/home/');
                   },
                   label: 'Entrar',
                   backGroundColor: whiteColor,
