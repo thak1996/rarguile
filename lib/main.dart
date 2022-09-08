@@ -6,3 +6,4 @@ import 'package:rarguile/src/app_module.dart';
 void main() {
   runApp(ModularApp(module: AppModule(), child: const App()));
 }
+
