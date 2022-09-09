@@ -35,7 +35,8 @@ class DsCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
-                    child: DsText(text: title, style: subTitleBold, maxLines: 1,)),
+                      child: DsText(
+                          text: title, style: subTitleBold, maxLines: 1)),
                   DsText(
                     text: date,
                     style: subTitleBoldPrimary.copyWith(

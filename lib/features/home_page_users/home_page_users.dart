@@ -57,9 +57,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
                       keyboardType: TextInputType.text,
                       labelText: 'Campo de Pesquisa',
                       hintText: 'Campo de Pesquisa',
-                      onChanged: (p0) {
-                        setState(() {});
-                      },
+                      onChanged: (p0) {},
                     ),
                   ),
                   Flexible(
