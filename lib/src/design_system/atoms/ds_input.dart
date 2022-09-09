@@ -12,7 +12,7 @@ class DsInputField extends StatelessWidget {
     this.suffixIcon,
     this.onPressed,
     this.validator,
-    this.obscureText,
+    this.obscureText = false,
     this.onChanged,
     this.onSubmitted,
   });
@@ -22,10 +22,10 @@ class DsInputField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Icon? prefixIcon;
-  final dynamic suffixIcon;
+  final IconData? suffixIcon;
   final VoidCallback? onPressed;
   final dynamic validator;
-  final dynamic obscureText;
+  final bool obscureText;
   final Function(String)? onChanged;
   final Function(String)? onSubmitted;
 
@@ -37,8 +37,8 @@ class DsInputField extends StatelessWidget {
         hintText: hintText,
         prefixIcon: prefixIcon,
         suffixIcon: IconButton(
-          icon: suffixIcon,
           onPressed: onPressed,
+          icon: Icon(suffixIcon),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: azulOceano, width: 1),
@@ -71,7 +71,6 @@ class DsInputField extends StatelessWidget {
       textInputAction: TextInputAction.done,
       controller: controller,
       validator: validator,
-
       //Password
       obscureText: obscureText,
       onChanged: onChanged,
