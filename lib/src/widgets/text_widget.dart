@@ -41,30 +41,35 @@ class _TextWidgetState extends State<TextWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(flag ? firstPart : widget.finalText),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        flag = !flag;
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(
+                          () {
+                            flag = !flag;
+                          },
+                        );
                       },
-                    );
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      flag
-                          ? const DsText(
-                              text: 'Ver Mais', style: inputBoldPrimary)
-                          : const DsText(
-                              text: 'Ver Menos...', style: inputBoldPrimary),
-                      Icon(
-                        flag
-                            ? Icons.keyboard_arrow_down
-                            : Icons.keyboard_arrow_up,
-                        color: primaryColor,
+                      child: Row(
+                        children: [
+                          flag
+                              ? const DsText(
+                                  text: 'Ver Mais', style: inputBoldPrimary)
+                              : const DsText(
+                                  text: 'Ver Menos...',
+                                  style: inputBoldPrimary),
+                          Icon(
+                            flag
+                                ? Icons.keyboard_arrow_down
+                                : Icons.keyboard_arrow_up,
+                            color: primaryColor,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 )
               ],
             ),
