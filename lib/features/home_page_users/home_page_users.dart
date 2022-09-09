@@ -24,7 +24,6 @@ class _HomePageUsersState extends State<HomePageUsers> {
   @override
   void initState() {
     dataSource = VideosDataSource(service);
-    dataSource.getAllVideos();
     super.initState();
   }
 
