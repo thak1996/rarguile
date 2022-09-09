@@ -8,9 +8,9 @@ class DsCard extends StatelessWidget {
   const DsCard({
     super.key,
     this.route,
-    required this.title,
-    required this.text,
-    required this.date,
+    this.title = '',
+    this.text = '',
+    this.date = '',
   });
 
   final String title;
@@ -34,7 +34,8 @@ class DsCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  DsText(text: title, style: subTitleBold),
+                  Flexible(
+                    child: DsText(text: title, style: subTitleBold, maxLines: 1,)),
                   DsText(
                     text: date,
                     style: subTitleBoldPrimary.copyWith(

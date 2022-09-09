@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/features/forget_password_page_two/forget_password_page_two.dart';
+import 'package:rarguile/features/confirm_change_pass/confirm_change_pass_page.dart';
 
-class ForgetPasswordPageTwoModule extends Module {
+class ConfirmChangePassPageModule extends Module {
   @override
   List<Bind<Object>> get binds => [];
 
@@ -9,7 +9,7 @@ class ForgetPasswordPageTwoModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => const ForgetPasswordPageTwo(),
+          child: (context, args) => const ConfirmChangePassPage(),
         ),
       ];
 }

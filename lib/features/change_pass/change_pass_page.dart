@@ -7,14 +7,14 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
 
-class ForgetPasswordPageTwo extends StatefulWidget {
-  const ForgetPasswordPageTwo({super.key});
+class ChangePassPage extends StatefulWidget {
+  const ChangePassPage({super.key});
 
   @override
-  State<ForgetPasswordPageTwo> createState() => _ForgetPasswordPageTwoState();
+  State<ChangePassPage> createState() => _ChangePassPageState();
 }
 
-class _ForgetPasswordPageTwoState extends State<ForgetPasswordPageTwo> {
+class _ChangePassPageState extends State<ChangePassPage> {
   TextEditingController codeController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
 
@@ -37,30 +37,29 @@ class _ForgetPasswordPageTwoState extends State<ForgetPasswordPageTwo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(
-                    right: screenSize(context).width * .25,
-                  ),
+                  padding:
+                      EdgeInsets.only(right: screenSize(context).width * 0.43),
                   child: const Text(
-                    'Digite seu código de confirmação enviado para seu email.',
+                    'Digite seu email.',
                     style: h5Primary,
+                    textAlign: TextAlign.start,
                   ),
                 ),
-                SizedBox(height: screenSize(context).height * .1),
+                SizedBox(height: screenSize(context).height * .2),
                 DsInputField(
                   controller: codeController,
-                  hintText: 'Digite o código aqui',
-                  keyboardType: TextInputType.number,
-                  labelText: 'Digite o código aqui',
-                  validator: Validator.validateCode,
+                  hintText: 'Digite o seu email',
+                  keyboardType: TextInputType.emailAddress,
+                  labelText: 'Digite o seu email',
+                  validator: Validator.validateEmail,
                 ),
                 SizedBox(height: screenSize(context).height * .1),
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
                     formMasterKey.currentState!.validate()
-                        ? Modular.to
-                            .pushNamed('/changePass/confirmation/newPass/')
-                        : debugPrint('Código Incorreto');
+                        ? Modular.to.pushNamed('/changePass/confirmation/')
+                        : debugPrint('Dados incorretos, tente novamente!');
                   },
                 ),
               ],

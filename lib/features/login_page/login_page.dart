@@ -7,6 +7,7 @@ import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
+import 'package:rarguile/src/widgets/hide_show_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

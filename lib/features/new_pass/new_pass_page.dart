@@ -7,15 +7,16 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
 
-class ForgetPasswordPageOne extends StatefulWidget {
-  const ForgetPasswordPageOne({super.key});
+class NewPassPage extends StatefulWidget {
+  const NewPassPage({super.key});
 
   @override
-  State<ForgetPasswordPageOne> createState() => _ForgetPasswordPageOneState();
+  State<NewPassPage> createState() => _NewPassPageState();
 }
 
-class _ForgetPasswordPageOneState extends State<ForgetPasswordPageOne> {
-  TextEditingController codeController = TextEditingController();
+class _NewPassPageState extends State<NewPassPage> {
+  TextEditingController passwordOneController = TextEditingController();
+  TextEditingController passwordTwoController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
 
   @override
@@ -38,27 +39,34 @@ class _ForgetPasswordPageOneState extends State<ForgetPasswordPageOne> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsets.only(right: screenSize(context).width * 0.43),
+                      EdgeInsets.only(right: screenSize(context).width * 0.29),
                   child: const Text(
-                    'Digite seu email.',
+                    'Digite sua nova senha.',
                     style: h5Primary,
-                    textAlign: TextAlign.start,
                   ),
                 ),
                 SizedBox(height: screenSize(context).height * .2),
                 DsInputField(
-                  controller: codeController,
-                  hintText: 'Digite o seu email',
-                  keyboardType: TextInputType.emailAddress,
-                  labelText: 'Digite o seu email',
-                  validator: Validator.validateEmail,
+                  controller: passwordOneController,
+                  hintText: 'Digite sua nova senha',
+                  keyboardType: TextInputType.text,
+                  labelText: 'Digite sua nova senha',
+                  validator: Validator.validatePassword,
+                ),
+                SizedBox(height: screenSize(context).height * .014),
+                DsInputField(
+                  controller: passwordTwoController,
+                  hintText: 'Confirme sua nova senha',
+                  keyboardType: TextInputType.text,
+                  labelText: 'Confirme sua nova senha',
+                  validator: Validator.validatePassword,
                 ),
                 SizedBox(height: screenSize(context).height * .1),
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
                     formMasterKey.currentState!.validate()
-                        ? Modular.to.pushNamed('/changePass/confirmation/')
+                        ? Modular.to.pushNamed('/home/')
                         : debugPrint('Dados incorretos, tente novamente!');
                   },
                 ),

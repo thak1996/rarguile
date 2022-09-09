@@ -1,6 +1,8 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:rarguile/features/home_page_users/home_page_controller.dart';
 import 'package:rarguile/src/data_source/videos_data_source.dart';
+import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
@@ -20,6 +22,7 @@ class HomePageUsers extends StatefulWidget {
 class _HomePageUsersState extends State<HomePageUsers> {
   final HttpService service = HttpService();
   late final VideosDataSource dataSource;
+  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
@@ -35,44 +38,76 @@ class _HomePageUsersState extends State<HomePageUsers> {
         future: dataSource.getAllVideos(),
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
-            final List<VideosModel> videos = snapshot.data!;
-            return ListView.builder(
-              itemCount: videos.length,
-              itemBuilder: (context, index) {
-                final video = videos[index];
-                return Container(
-                  decoration: const BoxDecoration(color: whiteColor),
-                  child: Padding(
+            final List<VideosModel> videos = snapshot.data!.toList();
+            final List<VideosModel> videosSearch = videos
+                .where((element) =>
+                    conditionDisplayVideo(element, searchController.text))
+                .toList();
+            return Container(
+              decoration: const BoxDecoration(color: whiteColor),
+              child: Column(
+                children: [
+                  Padding(
                     padding: EdgeInsets.only(
-                      right: screenSize(context).width * .02,
-                      left: screenSize(context).width * .02,
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: screenSize(context).width * .03),
-                        Row(
-                          children: [
-                            SizedBox(width: screenSize(context).width * 0.03),
-                            DsText(
-                              text: video.topico,
-                              style: h6Primary.copyWith(
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
-                        ),
-                        DsCard(
-                          title: video.nome,
-                          text: video.descricao,
-                          date: formatDate(
-                            DateTime.parse(video.dataPublicacao),
-                            [dd, ':', mm, ':', yyyy],
-                          ),
-                        ),
-                      ],
+                        top: screenSize(context).height * .02,
+                        left: screenSize(context).height * .02,
+                        right: screenSize(context).height * .02),
+                    child: DsInputField(
+                      controller: searchController,
+                      keyboardType: TextInputType.text,
+                      labelText: 'Campo de Pesquisa',
+                      hintText: 'Campo de Pesquisa',
+                      onChanged: (p0) {
+                        setState(() {});
+                      },
                     ),
                   ),
-                );
-              },
+                  Flexible(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: videosSearch.length,
+                      itemBuilder: (context, index) {
+                        final video = videosSearch[index];
+                        return Container(
+                          decoration: const BoxDecoration(color: whiteColor),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              right: screenSize(context).width * .02,
+                              left: screenSize(context).width * .02,
+                            ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                    height: screenSize(context).width * .03),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                        width:
+                                            screenSize(context).width * 0.03),
+                                    DsText(
+                                      text: video.topico,
+                                      style: h6Primary.copyWith(
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
+                                DsCard(
+                                  title: video.nome,
+                                  text: video.descricao,
+                                  date: formatDate(
+                                    DateTime.parse(video.createdAt),
+                                    [dd, '/', mm, '/', yyyy],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             );
           } else if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
