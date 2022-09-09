@@ -34,6 +34,7 @@ class _TextWidgetState extends State<TextWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // ignore: unrelated_type_equality_checks
       child: secondPart.length == ""
           ? Text(widget.finalText)
           : Column(

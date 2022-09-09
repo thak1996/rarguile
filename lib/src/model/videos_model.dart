@@ -12,15 +12,15 @@ class VideosModel {
   final String topico;
 
   VideosModel({
-    required this.id,
-    required this.nome,
-    required this.url,
-    required this.thumbUrl,
-    required this.descricao,
-    required this.createdAt,
-    required this.duracao,
-    required this.dataPublicacao,
-    required this.topico,
+    this.id = '',
+    this.nome = '',
+    this.url = '',
+    this.thumbUrl = '',
+    this.descricao = '',
+    this.createdAt = '',
+    this.duracao = '',
+    this.dataPublicacao = '',
+    this.topico = '',
   });
 
   Map<String, dynamic> toMap() {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
-import 'package:rarguile/widgets/text_widget.dart';
+import 'package:rarguile/src/widgets/text_widget.dart';
 
 class DsCard extends StatelessWidget {
   const DsCard({

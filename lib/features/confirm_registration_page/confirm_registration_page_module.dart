@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/features/confirm_registration_page/confirm_registration_page.dart';
 
