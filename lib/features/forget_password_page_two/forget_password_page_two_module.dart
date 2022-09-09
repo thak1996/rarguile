@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/features/forget_password_page_two/forget_password_page_two.dart';
+import 'package:rarguile/features/forget_password_page_two/forget_password_page_two.dart';
 
 class ForgetPasswordPageTwoModule extends Module {
   @override

@@ -20,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passwordController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,9 +82,10 @@ class _LoginPageState extends State<LoginPage> {
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
                     onPressed: () {
-                      formMasterKey.currentState!.validate()
-                          ? Modular.to.pushNamed('/home/')
-                          : debugPrint('Dados incorretos, tente novamente!');
+                      // formMasterKey.currentState!.validate()
+                      //     ? Modular.to.pushNamed('/home/users/')
+                      //     : debugPrint('Dados incorretos, tente novamente!');
+                      Modular.to.pushNamed('/home/users/');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

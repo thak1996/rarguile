@@ -1,6 +1,8 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/src/data_source/videos_data_source.dart';
+import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
@@ -15,7 +17,9 @@ class _SplashArtState extends State<SplashArt> {
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
-    ).then((value) => Modular.to.pushReplacementNamed('/login/'));
+    ).then(
+      (value) => Modular.to.pushReplacementNamed('/login/'),
+    );
     super.initState();
   }
 
@@ -44,8 +48,7 @@ class _SplashArtState extends State<SplashArt> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset('assets/images/capelo-splashart.png'),
-                            const CircularProgressIndicator()
+                            Image.asset('assets/images/capelo-splashart.png')
                           ],
                         ),
                       ),
