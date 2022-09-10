@@ -37,4 +37,15 @@ class Validator {
       return 'A senha não é considerada uma senha forte';
     }
   }
+
+  static String? validateCode(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'O campo não pode ser vazio';
+    }
+    String pattern = r'[^a-z ]\ *([.0-9])*\d';
+    RegExp regExp = RegExp(pattern);
+    if (!regExp.hasMatch(value)) {
+      return 'Digite apenas números';
+    }
+  }
 }
