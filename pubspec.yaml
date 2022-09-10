@@ -81,6 +81,7 @@ flutter:
   assets:
     - assets/images/capelo-splashart.png
     - assets/images/RaroTube.png
+    - assets/images/raro_video_preview.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

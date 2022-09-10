@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/features/confirm_registration_page/confirm_registration_page_module.dart';
 import 'package:rarguile/features/change_pass/change_pass_page_module.dart';
+import 'package:rarguile/features/detail_page/detail_page.dart';
 import 'package:rarguile/features/new_pass/new_pass_page_module.dart';
 import 'package:rarguile/features/confirm_change_pass/confirm_change_pass_page_module.dart';
 import 'package:rarguile/features/home_page_users/home_page_users_module.dart';
@@ -27,7 +28,7 @@ class AppModule extends Module {
           module: HomePageUsersModule(),
         ),
         ModuleRoute(
-          '/home/visitant/',
+          '/home/guest/',
           module: RegistrationPageModule(), //TODO: Página de Home sem login
         ),
         ModuleRoute(
@@ -48,6 +49,14 @@ class AppModule extends Module {
         ),
         ModuleRoute(
           '/changePass/confirmation/newPass/',
+          module: NewPassPageModule(),
+        ),
+        ModuleRoute(
+          '/detailPage/',
+          module: NewPassPageModule(),
+        ),
+        ModuleRoute(
+          '/detailPage/guest',
           module: NewPassPageModule(),
         ),
       ];
