@@ -1,13 +1,16 @@
+
+import 'package:rarguile/src/login/user/user.dart';
 import 'package:rarguile/src/service/api_service.dart';
 
-class VideosDataSource {
+class LoginDataSource {
   final ApiService service;
 
-  VideosDataSource(this.service);
+  LoginDataSource(this.service);
 
-  Future<dynamic> login(
+  Future<User> login(
       {required String email, required String password}) async {
     final response = await service.post(route: '/auth/login', body: {"email": email, "senha": password});
-    return response;
+    final user = User.fromJson(response.body);
+    return user;
   }
 }

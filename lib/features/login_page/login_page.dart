@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/features/login_page/controller/login_controller.dart';
+import 'package:rarguile/src/data_source/videos_data_source.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
+import 'package:rarguile/src/login/datasource/login_datasource.dart';
+import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
@@ -19,7 +23,9 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController loginController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
-
+  final service = HttpService();
+  late final datasource = LoginDataSource(service);
+  late final datasourceGet = VideosDataSource(service);
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +87,18 @@ class _LoginPageState extends State<LoginPage> {
                     label: 'Entrar',
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
-                    onPressed: () {
-                      // formMasterKey.currentState!.validate()
-                      //     ? Modular.to.pushNamed('/home/users/')
-                      //     : debugPrint('Dados incorretos, tente novamente!');
-                      Modular.to.pushNamed('/home/users/');
+                    onPressed: () async {
+                      final value = await datasource.login(
+                          email: 'franklyn_vs_@hotmail.com',
+                          password: 'raro123');
+                      LoginController.user = value.toJson();
+
+                      LoginController.saveUser(LoginController.user!, service);
+
+                      // // formMasterKey.currentState!.validate()
+                      // //     ? Modular.to.pushNamed('/home/users/')
+                      // //     : debugPrint('Dados incorretos, tente novamente!');
+                      // Modular.to.pushNamed('/home/users/');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

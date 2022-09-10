@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/features/confirm_registration_page/confirm_registration_page.dart';
 import 'package:rarguile/features/registration_page/registration_page.dart';
 
 class RegistrationPageModule extends Module {
@@ -10,6 +11,10 @@ class RegistrationPageModule extends Module {
         ChildRoute(
           Modular.initialRoute,
           child: (context, args) => const RegistrationPage(),
+        ),
+        ChildRoute(
+          '/registration/confirmation/',
+          child: (context, args) => const ConfirmRegistrationPage(),
         ),
       ];
 }

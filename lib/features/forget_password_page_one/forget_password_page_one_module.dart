@@ -11,5 +11,13 @@ class ForgetPasswordPageOneModule extends Module {
           Modular.initialRoute,
           child: (context, args) => const ForgetPasswordPageOne(),
         ),
+        ChildRoute(
+          '/changePass/confirmation/',
+          child: (context, args) => const ForgetPasswordPageOne(),
+        ),
+        ChildRoute(
+          '/changePass/confirmation/newPass/',
+          child: (context, args) => const ForgetPasswordPageOne(),
+        ),
       ];
 }
