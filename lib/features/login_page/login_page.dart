@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
+import 'package:rarguile/src/design_system/atoms/ds_input_password.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
@@ -19,7 +20,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController loginController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
-
+  String? _password = '';
+  ValueNotifier<bool> _obscureText = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             width: screenSize(context).width,
             decoration: const BoxDecoration(color: whiteColor),
             child: Padding(
-              padding: const EdgeInsets.only(right: 54, left: 54),
+              padding: const EdgeInsets.only(right: 50, left: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -52,12 +54,28 @@ class _LoginPageState extends State<LoginPage> {
                     validator: Validator.validateEmail,
                   ),
                   SizedBox(height: screenSize(context).height * .014),
-                  DsInputField(
-                    controller: passwordController,
-                    hintText: 'Digite sua senha',
-                    keyboardType: TextInputType.visiblePassword,
-                    labelText: 'Digite sua senha',
-                    validator: Validator.validatePassword,
+                  ValueListenableBuilder<bool>(
+                    valueListenable: _obscureText,
+                    builder: (context, value, _) => DsInputFieldPass(
+                      onSaved: (value) {
+                        _password = value;
+                      },
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          _obscureText.value = !value;
+                        },
+                        child: Icon(
+                          value ? Icons.visibility : Icons.visibility_off,
+                          color: azulVioleta,
+                        ),
+                      ),
+                      obscureText: value,
+                      controller: passwordController,
+                      hintText: 'Digite sua senha',
+                      keyboardType: TextInputType.visiblePassword,
+                      labelText: 'Digite sua senha',
+                      validator: Validator.validatePassword,
+                    ),
                   ),
                   SizedBox(height: screenSize(context).height * .014),
                   Align(

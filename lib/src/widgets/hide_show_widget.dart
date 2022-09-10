@@ -5,7 +5,7 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
 class HideShow extends StatefulWidget {
-  const HideShow(bool bool, {super.key});
+  const HideShow({super.key});
 
   @override
   State<HideShow> createState() => _HideShowState();

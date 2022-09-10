@@ -31,50 +31,53 @@ class DsInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: labelText,
-        hintText: hintText,
-        prefixIcon: prefixIcon,
-        suffixIcon: IconButton(
-          onPressed: onPressed,
-          icon: Icon(suffixIcon),
+    return SizedBox(
+      height: 52,
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: labelText,
+          hintText: hintText,
+          prefixIcon: prefixIcon,
+          suffixIcon: IconButton(
+            onPressed: onPressed,
+            icon: Icon(suffixIcon),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: strokeDisable, width: 1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: strokeDisable, width: 1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: azulVioleta, width: 1.5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: redAlert, width: 1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: redAlert, width: 1.5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          errorStyle: const TextStyle(color: redAlert),
+          hintStyle: const TextStyle(color: azulMaximum),
+          labelStyle: const TextStyle(color: primaryColor),
+          filled: true,
+          fillColor: fillBackground,
         ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: azulOceano, width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        disabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: strokeDisable, width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: azulVioleta, width: 1.5),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: redAlert, width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: redAlert, width: 1.5),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        errorStyle: const TextStyle(color: redAlert),
-        hintStyle: const TextStyle(color: azulMaximum),
-        labelStyle: const TextStyle(color: azulVioleta),
-        filled: true,
-        fillColor: fillBackground,
+        style: const TextStyle(color: primaryColor),
+        keyboardType: keyboardType,
+        textInputAction: TextInputAction.done,
+        controller: controller,
+        validator: validator,
+        //Password
+        obscureText: obscureText,
+        onChanged: onChanged,
+        onFieldSubmitted: onSubmitted,
       ),
-      style: const TextStyle(color: primaryColor),
-      keyboardType: keyboardType,
-      textInputAction: TextInputAction.done,
-      controller: controller,
-      validator: validator,
-      //Password
-      obscureText: obscureText,
-      onChanged: onChanged,
-      onFieldSubmitted: onSubmitted,
     );
   }
 }

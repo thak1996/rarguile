@@ -21,13 +21,7 @@ class DsDescription extends StatefulWidget {
 }
 
 class _DsDescriptionState extends State<DsDescription> {
-  bool isFavorite = false;
-
-  void setFavorite() {
-    setState(() {
-      isFavorite = !isFavorite;
-    });
-  }
+  ValueNotifier<bool> isFavorite = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
@@ -45,24 +39,17 @@ class _DsDescriptionState extends State<DsDescription> {
                 text: widget.title,
                 style: subTitleBoldPrimary,
               ),
-              IconButton(
-                splashRadius: 5,
-                icon: Icon(
-                    isFavorite ? (Icons.favorite) : (Icons.favorite_border),
-                    size: 22),
-                color: azulVioleta,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => VideoPage(
-                        videoUrl:
-                            'https://us06web.zoom.us/rec/play/utiRp1YklCRN38WhDNrcemK971bVwbgcRbCBk_W9FzQ0hBJGRf496aIqjiWcaenVsUmaS5cyUB6roX1I.VMr84n8lLm-0xyIp',
-                      ),
-                    ),
-                  );
-                  setFavorite();
-                },
+              ValueListenableBuilder<bool>(
+                valueListenable: isFavorite,
+                builder: (context, value, _) => IconButton(
+                  splashRadius: 5,
+                  icon: Icon(value ? (Icons.favorite) : (Icons.favorite_border),
+                      size: 22),
+                  color: azulVioleta,
+                  onPressed: () {
+                    isFavorite.value = !value;
+                  },
+                ),
               ),
             ],
           ),

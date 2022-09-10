@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
-class DsInputField extends StatelessWidget {
-  const DsInputField({
+class DsInputFieldPass extends StatelessWidget {
+  const DsInputFieldPass({
     super.key,
     required this.controller,
     required this.keyboardType,
     required this.labelText,
     required this.hintText,
     this.prefixIcon,
-    this.suffixIcon,
+    required this.suffixIcon,
     this.onPressed,
     this.validator,
-    required this.obscureText,
-    this.onChanged,
+    this.obscureText = false,
+    required this.onSaved,
     this.onSubmitted,
+    this.icon,
   });
 
   final TextEditingController controller;
@@ -22,12 +23,13 @@ class DsInputField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Icon? prefixIcon;
-  final dynamic suffixIcon;
+  final GestureDetector suffixIcon;
   final VoidCallback? onPressed;
   final dynamic validator;
   final bool obscureText;
-  final Function(String)? onChanged;
+  final void Function(String?) onSaved;
   final Function(String)? onSubmitted;
+  final dynamic icon;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +38,9 @@ class DsInputField extends StatelessWidget {
         labelText: labelText,
         hintText: hintText,
         prefixIcon: prefixIcon,
-        suffixIcon: IconButton(
-          icon: suffixIcon,
-          onPressed: onPressed,
-        ),
+        suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: azulOceano, width: 1),
+          borderSide: const BorderSide(color: strokeDisable, width: 1),
           borderRadius: BorderRadius.circular(12),
         ),
         disabledBorder: OutlineInputBorder(
@@ -62,7 +61,7 @@ class DsInputField extends StatelessWidget {
         ),
         errorStyle: const TextStyle(color: redAlert),
         hintStyle: const TextStyle(color: azulMaximum),
-        labelStyle: const TextStyle(color: azulVioleta),
+        labelStyle: const TextStyle(color: primaryColor),
         filled: true,
         fillColor: fillBackground,
       ),
@@ -74,7 +73,7 @@ class DsInputField extends StatelessWidget {
 
       //Password
       obscureText: obscureText,
-      onChanged: onChanged,
+      onSaved: onSaved,
       onFieldSubmitted: onSubmitted,
     );
   }

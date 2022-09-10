@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
-import 'package:rarguile/src/widgets/text_widget.dart';
+import 'package:rarguile/src/widgets/show_more_less_widget.dart';
 
 class DsCard extends StatelessWidget {
   const DsCard({
@@ -35,8 +35,9 @@ class DsCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
-                      child: DsText(
-                          text: title, style: subTitleBold, maxLines: 1)),
+                    child:
+                        DsText(text: title, style: subTitleBold, maxLines: 1),
+                  ),
                   DsText(
                     text: date,
                     style: subTitleBoldPrimary.copyWith(
