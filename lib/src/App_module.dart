@@ -17,7 +17,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => SplashArt(),
+          child: (context, args) => const SplashArt(),
         ),
         ModuleRoute(
           '/login/',
