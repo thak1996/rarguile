@@ -7,7 +7,7 @@ import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/design_system/organisms/ds_card.dart';
-import 'package:rarguile/src/model/videos_model.dart';
+import 'package:rarguile/src/model/video_model.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';

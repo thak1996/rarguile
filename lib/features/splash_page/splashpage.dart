@@ -1,6 +1,10 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/features/login_page/controller/login_controller.dart';
+import 'package:rarguile/src/login/user/user.dart';
+import 'package:rarguile/src/service/http_service.dart';
+import 'package:rarguile/src/service/shared_preferences_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
@@ -11,12 +15,26 @@ class SplashArt extends StatefulWidget {
 }
 
 class _SplashArtState extends State<SplashArt> {
+  final service = HttpService();
+  authLogin() {
+    SharedPreferencesService.readString().then((value) {
+      LoginController.user = value;
+
+      if (LoginController.user != null) {
+        service.token = User.fromJson(LoginController.user!).accessToken;
+        Modular.to.navigate('/home/users/');
+      } else {
+        Modular.to.navigate('/login/');
+      }
+    });
+  }
+
   @override
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
     ).then(
-      (value) => Modular.to.pushReplacementNamed('/login/'),
+      (value) => authLogin(),
     );
     super.initState();
   }

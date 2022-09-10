@@ -8,6 +8,7 @@ class Validator {
     if (!value.contains(rfc5322)) {
       return 'Nome inválido, digite seu nome corretamente';
     }
+    return null;
   }
 
   static String? validateEmail(String? value) {
@@ -36,6 +37,7 @@ class Validator {
     if (!regExp.hasMatch(value)) {
       return 'A senha não é considerada uma senha forte';
     }
+    return null;
   }
 
   static String? validateCode(String? value) {
@@ -47,5 +49,6 @@ class Validator {
     if (!regExp.hasMatch(value)) {
       return 'Digite apenas números';
     }
+    return null;
   }
 }

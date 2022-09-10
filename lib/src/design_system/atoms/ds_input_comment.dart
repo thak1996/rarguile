@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text_field.dart';
 
 class InputComment extends StatelessWidget {
-  InputComment({super.key, required this.hintText, required this.onPressed});
+    InputComment({super.key, required this.hintText, required this.onPressed});
 
   final String hintText;
   final VoidCallback onPressed;
 
-  TextEditingController textController = TextEditingController();
+  final TextEditingController textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
