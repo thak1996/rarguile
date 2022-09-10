@@ -24,7 +24,6 @@ class _HomePageUsersState extends State<HomePageUsers> {
   late final VideosDataSource dataSource;
   TextEditingController searchController = TextEditingController();
 
-
   @override
   void initState() {
     dataSource = VideosDataSource(service);
@@ -37,7 +36,6 @@ class _HomePageUsersState extends State<HomePageUsers> {
       appBar: const DsAppBar(title: 'Raro Tube - Home'),
       body: FutureBuilder<List<VideosModel>>(
         future: dataSource.getAllVideos(),
-        
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             final List<VideosModel> videos = snapshot.data!.toList();
@@ -50,20 +48,21 @@ class _HomePageUsersState extends State<HomePageUsers> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(
-                        top: screenSize(context).height * .02,
-                        left: screenSize(context).height * .02,
-                        right: screenSize(context).height * .02),
-                    child: DsInputField(
+                      padding: EdgeInsets.only(
+                          top: screenSize(context).height * .02,
+                          left: screenSize(context).height * .02,
+                          right: screenSize(context).height * .02),
+                      child: DsInputField(
+                        prefixIcon: const Icon(
+                          Icons.search,
+                          color: primaryColor,
+                        ),
                         controller: searchController,
                         keyboardType: TextInputType.text,
                         labelText: 'Campo de Pesquisa',
                         hintText: 'Campo de Pesquisa',
-                        onChanged: (p0) {
-                          
-                        },
-                      )
-                  ),
+                        onChanged: (p0) {},
+                      )),
                   Flexible(
                     child: ListView.builder(
                       shrinkWrap: true,

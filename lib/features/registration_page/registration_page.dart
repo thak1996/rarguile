@@ -62,6 +62,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .012),
                   DsInputField(
+                    obscureText: true,
                     controller: passwordController,
                     hintText: 'Digite sua senha',
                     keyboardType: TextInputType.visiblePassword,
