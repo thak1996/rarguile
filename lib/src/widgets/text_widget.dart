@@ -34,36 +34,42 @@ class _TextWidgetState extends State<TextWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // ignore: unrelated_type_equality_checks
       child: secondPart.length == ""
           ? Text(widget.finalText)
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(flag ? firstPart : widget.finalText),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        flag = !flag;
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(
+                          () {
+                            flag = !flag;
+                          },
+                        );
                       },
-                    );
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      flag
-                          ? const DsText(
-                              text: 'Ver Mais', style: inputBoldPrimary)
-                          : const DsText(
-                              text: 'Ver Menos...', style: inputBoldPrimary),
-                      Icon(
-                        flag
-                            ? Icons.keyboard_arrow_down
-                            : Icons.keyboard_arrow_up,
-                        color: primaryColor,
+                      child: Row(
+                        children: [
+                          flag
+                              ? const DsText(
+                                  text: 'Ver Mais', style: inputBoldPrimary)
+                              : const DsText(
+                                  text: 'Ver Menos...',
+                                  style: inputBoldPrimary),
+                          Icon(
+                            flag
+                                ? Icons.keyboard_arrow_down
+                                : Icons.keyboard_arrow_up,
+                            color: primaryColor,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 )
               ],
             ),

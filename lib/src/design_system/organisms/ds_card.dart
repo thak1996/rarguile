@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
-import 'package:rarguile/widgets/text_widget.dart';
+import 'package:rarguile/src/widgets/text_widget.dart';
 
 class DsCard extends StatelessWidget {
   const DsCard({
     super.key,
     this.route,
-    required this.title,
-    required this.text,
-    required this.date,
+    this.title = '',
+    this.text = '',
+    this.date = '',
   });
 
   final String title;
@@ -34,7 +34,9 @@ class DsCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  DsText(text: title, style: subTitleBold),
+                  Flexible(
+                      child: DsText(
+                          text: title, style: subTitleBold, maxLines: 1)),
                   DsText(
                     text: date,
                     style: subTitleBoldPrimary.copyWith(
