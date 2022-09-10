@@ -6,6 +6,7 @@ import 'package:rarguile/src/shared/app_colors.dart';
 
 import 'package:rarguile/widgets/hide_show_widget.dart';
 import 'package:rarguile/widgets/video_widget.dart';
+import 'package:rarguile/widgets/yt_video_widget.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -14,14 +15,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      appBar: DsAppBar(title: "Raro Tube - Aula 3"),
+      appBar: const DsAppBar(title: "VideoTube"),
       body: ListView(
         children: [
           Column(
-            children: [
-              VideoWidget(),
+            children: const [
+              YTVideo(
+                  videoUrl:
+                      'https://www.youtube.com/watch?v=fcMlPEVSacs&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S'),
               DsDescription(
-                title: 'Abelha Africana',
+                title: 'Titulo do Video',
                 description:
                     'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhafffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
               ),

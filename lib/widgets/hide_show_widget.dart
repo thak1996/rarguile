@@ -12,42 +12,37 @@ class HideShow extends StatefulWidget {
 }
 
 class _HideShowState extends State<HideShow> {
-  late bool isVisible = false;
-
-  void showWidget() {
-    setState(() {
-      isVisible = !isVisible;
-    });
-  }
+  ValueNotifier<bool> isVisible = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          InkWell(
-            child: Row(
-              children: [
-                const DsText(text: "Comentários", style: subTitleBoldPrimary),
-                Icon(
-                  isVisible
-                      ? Icons.keyboard_arrow_up
-                      : Icons.keyboard_arrow_down,
-                  color: primaryColor,
-                ),
-              ],
+      child: ValueListenableBuilder<bool>(
+        valueListenable: isVisible,
+        builder: (context, value, _) => Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            InkWell(
+              child: Row(
+                children: [
+                  const DsText(text: "Comentários", style: subTitleBoldPrimary),
+                  Icon(
+                    value ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                    color: primaryColor,
+                  ),
+                ],
+              ),
+              onTap: () {
+                isVisible.value = !value;
+              },
             ),
-            onTap: () {
-              showWidget();
-            },
-          ),
-          Visibility(
-            visible: isVisible,
-            child: const DsComment(),
-          ),
-        ],
+            Visibility(
+              visible: value,
+              child: const DsComment(),
+            ),
+          ],
+        ),
       ),
     );
   }
