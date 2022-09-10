@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class VideosModel {
+import 'package:flutter/material.dart';
+
+class VideosModel  extends ChangeNotifier{
   final String id;
   final String nome;
   final String url;

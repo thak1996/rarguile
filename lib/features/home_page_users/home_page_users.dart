@@ -24,6 +24,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
   late final VideosDataSource dataSource;
   TextEditingController searchController = TextEditingController();
 
+
   @override
   void initState() {
     dataSource = VideosDataSource(service);
@@ -36,6 +37,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
       appBar: const DsAppBar(title: 'Raro Tube - Home'),
       body: FutureBuilder<List<VideosModel>>(
         future: dataSource.getAllVideos(),
+        
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             final List<VideosModel> videos = snapshot.data!.toList();
@@ -53,12 +55,14 @@ class _HomePageUsersState extends State<HomePageUsers> {
                         left: screenSize(context).height * .02,
                         right: screenSize(context).height * .02),
                     child: DsInputField(
-                      controller: searchController,
-                      keyboardType: TextInputType.text,
-                      labelText: 'Campo de Pesquisa',
-                      hintText: 'Campo de Pesquisa',
-                      onChanged: (p0) {},
-                    ),
+                        controller: searchController,
+                        keyboardType: TextInputType.text,
+                        labelText: 'Campo de Pesquisa',
+                        hintText: 'Campo de Pesquisa',
+                        onChanged: (p0) {
+                          
+                        },
+                      )
                   ),
                   Flexible(
                     child: ListView.builder(
