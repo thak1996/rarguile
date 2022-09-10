@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/features/login_page/controller/login_controller.dart';
-import 'package:rarguile/src/data_source/videos_data_source.dart';
+import 'package:rarguile/src/home/datasource/home_datasource.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input_password.dart';
@@ -24,6 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController loginController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
+  final ValueNotifier<bool> _obscureText = ValueNotifier<bool>(false);
+
   final service = HttpService();
   late final datasource = LoginDataSource(service);
   late final datasourceGet = VideosDataSource(service);
@@ -62,9 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   ValueListenableBuilder<bool>(
                     valueListenable: _obscureText,
                     builder: (context, value, _) => DsInputFieldPass(
-                      onSaved: (value) {
-                        _password = value;
-                      },
+                      onSaved: (value) {},
                       suffixIcon: GestureDetector(
                         onTap: () {
                           _obscureText.value = !value;
@@ -109,13 +109,12 @@ class _LoginPageState extends State<LoginPage> {
                           email: 'franklyn_vs_@hotmail.com',
                           password: 'raro123');
                       LoginController.user = value.toJson();
-
                       LoginController.saveUser(LoginController.user!, service);
-
+                      print(LoginController.user);
                       // // formMasterKey.currentState!.validate()
                       // //     ? Modular.to.pushNamed('/home/users/')
                       // //     : debugPrint('Dados incorretos, tente novamente!');
-                      // Modular.to.pushNamed('/home/users/');
+                      Modular.to.pushNamed('/home/users/');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

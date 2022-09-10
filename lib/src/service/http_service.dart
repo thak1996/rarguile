@@ -9,7 +9,7 @@ class HttpService implements ApiService {
   Future get({required String route, Map<String, dynamic>? params}) async {
     Uri url = Uri.http(baseURL, route);
     var response =
-        await http.get(url, headers: {"Authorization": "Bearer $token"});
+        await http.get(url);
     return response;
   }
 

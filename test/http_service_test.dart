@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:rarguile/src/data_source/videos_data_source.dart';
+import 'package:rarguile/src/home/datasource/home_datasource.dart';
 
 
 @GenerateMocks([VideosDataSource])

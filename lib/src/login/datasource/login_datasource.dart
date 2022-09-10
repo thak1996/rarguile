@@ -1,5 +1,5 @@
 
-import 'package:rarguile/src/login/user/user.dart';
+import 'package:rarguile/src/login/model/user_model.dart';
 import 'package:rarguile/src/service/api_service.dart';
 
 class LoginDataSource {

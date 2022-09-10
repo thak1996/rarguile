@@ -1,13 +1,11 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:rarguile/features/home_page_users/home_store.dart';
-import 'package:rarguile/src/data_source/videos_data_source.dart';
-import 'package:rarguile/src/design_system/atoms/ds_input.dart';
+import 'package:rarguile/src/home/datasource/home_datasource.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/design_system/organisms/ds_card.dart';
-import 'package:rarguile/src/model/video_model.dart';
+import 'package:rarguile/src/home/model/home_model.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
@@ -65,7 +63,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
                   // ),
                   Flexible(
                     child: ListView.builder(
-                      shrinkWrap: true,
+                      shrinkWrap: false,
                       itemCount: videos.length,
                       itemBuilder: (context, index) {
                         final video = videos[index];
@@ -111,7 +109,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
               ),
             );
           } else if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: Text('Sem Informação'));
           } else if (snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator();
           } else if (snapshot.hasError) {

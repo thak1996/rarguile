@@ -9,6 +9,6 @@ void main() {
   test('test de login', () async {
     final list = await datasorce.login(
         email: "claudevanio.conceicao@gmail.com", password: "Rarguile@321");
-        print(list);
+        return list;
   });
 }

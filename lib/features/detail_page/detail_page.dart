@@ -5,7 +5,6 @@ import 'package:rarguile/src/design_system/organisms/ds_related.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/widgets/hide_show_widget.dart';
 import 'package:rarguile/src/widgets/video_widget.dart';
-import 'package:rarguile/src/widgets/yt_video_widget.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -43,7 +42,7 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                       );
                     },
-                    icon: Icon(Icons.play_arrow_rounded),
+                    icon: const Icon(Icons.play_arrow_rounded),
                     color: whiteColor,
                     iconSize: 150,
                   ),
