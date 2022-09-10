@@ -1,6 +1,6 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:rarguile/features/home_page_users/home_page_controller.dart';
+import 'package:rarguile/features/home_page_users/home_store.dart';
 import 'package:rarguile/src/data_source/videos_data_source.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
@@ -23,7 +23,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
   final HttpService service = HttpService();
   late final VideosDataSource dataSource;
   TextEditingController searchController = TextEditingController();
-
+  // HomeStore _homeStore = HomeStore();
 
   @override
   void initState() {
@@ -37,39 +37,38 @@ class _HomePageUsersState extends State<HomePageUsers> {
       appBar: const DsAppBar(title: 'Raro Tube - Home'),
       body: FutureBuilder<List<VideosModel>>(
         future: dataSource.getAllVideos(),
-        
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             final List<VideosModel> videos = snapshot.data!.toList();
-            final List<VideosModel> videosSearch = videos
-                .where((element) =>
-                    conditionDisplayVideo(element, searchController.text))
-                .toList();
+            // final List<VideosModel> videosSearch = videos
+            //     .where((element) =>
+            //         conditionDisplayVideo(element, searchController.text))
+            //     .toList();
             return Container(
               decoration: const BoxDecoration(color: whiteColor),
               child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: screenSize(context).height * .02,
-                        left: screenSize(context).height * .02,
-                        right: screenSize(context).height * .02),
-                    child: DsInputField(
-                        controller: searchController,
-                        keyboardType: TextInputType.text,
-                        labelText: 'Campo de Pesquisa',
-                        hintText: 'Campo de Pesquisa',
-                        onChanged: (p0) {
-                          
-                        },
-                      )
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.only(
+                  //       top: screenSize(context).height * .02,
+                  //       left: screenSize(context).height * .02,
+                  //       right: screenSize(context).height * .02),
+                  //   child: DsInputField(
+                  //     controller: searchController,
+                  //     keyboardType: TextInputType.text,
+                  //     labelText: 'Campo de Pesquisa',
+                  //     hintText: 'Campo de Pesquisa',
+                  //     onChanged: (p0) {
+                  //       setState(() {});
+                  //     },
+                  //   ),
+                  // ),
                   Flexible(
                     child: ListView.builder(
                       shrinkWrap: true,
-                      itemCount: videosSearch.length,
+                      itemCount: videos.length,
                       itemBuilder: (context, index) {
-                        final video = videosSearch[index];
+                        final video = videos[index];
                         return Container(
                           decoration: const BoxDecoration(color: whiteColor),
                           child: Padding(
