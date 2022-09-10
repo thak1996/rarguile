@@ -1,7 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:rarguile/src/service/api_service.dart';
 
-
 class HttpService implements ApiService {
   var baseURL = "44.199.200.211:3325";
   String? token = "";
@@ -25,8 +24,11 @@ class HttpService implements ApiService {
   }
 
   @override
-  Future post({required String route, Map<String, dynamic>? body}) {
-    throw UnimplementedError();
+  Future post({required String route, Map<String, dynamic>? body}) async {
+    Uri url = Uri.http(baseURL, route);
+    var response = await http.post(url, body: body);
+    print(response);
+    return response;
   }
 
   @override
