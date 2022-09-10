@@ -9,7 +9,7 @@ class HomePageUsersModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => HomePageUsers(),
+          child: (context, args) => const HomePageUsers(),
         ),
       ];
 }

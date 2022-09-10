@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/data_source/videos_data_source.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
-import 'package:rarguile/src/model/videos_model.dart';
+import 'package:rarguile/src/model/video_model.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
