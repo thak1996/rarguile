@@ -7,7 +7,9 @@ import 'package:rarguile/features/splash_page/splashpage.dart';
 
 class AppModule extends Module {
   @override
-  List<Bind<Object>> get binds => [];
+  List<Bind<Object>> get binds => [
+    
+  ];
 
   @override
   List<ModularRoute> get routes => [

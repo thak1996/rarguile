@@ -21,7 +21,7 @@ class _SplashArtState extends State<SplashArt> {
       LoginController.user = value;
 
       if (LoginController.user != null) {
-        service.token = User.fromJson(LoginController.user!).accessToken;
+        HttpService.token = User.fromJson(LoginController.user!).accessToken;
         Modular.to.navigate('/home/users/');
       } else {
         Modular.to.navigate('/login/');

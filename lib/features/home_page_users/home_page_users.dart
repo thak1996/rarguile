@@ -19,13 +19,13 @@ class HomePageUsers extends StatefulWidget {
 
 class _HomePageUsersState extends State<HomePageUsers> {
   final HttpService service = HttpService();
-  late final VideosDataSource dataSource;
+  late final VideosDataSource dataSource = VideosDataSource(service);
   TextEditingController searchController = TextEditingController();
   // HomeStore _homeStore = HomeStore();
 
   @override
   void initState() {
-    dataSource = VideosDataSource(service);
+    dataSource.getAllVideos();
     super.initState();
   }
 

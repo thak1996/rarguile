@@ -7,18 +7,18 @@ class LoginController {
   static String? user;
 
   static saveUser(String user, HttpService service) async {
-    SharedPreferencesService.writeString(user);
 
     await SharedPreferencesService.writeString(LoginController.user!)
         .then((value) {
       SharedPreferencesService.readString().then((value) {
         LoginController.user = value;
         if (LoginController.user != null) {
-          service.token = User.fromJson(LoginController.user!).accessToken;
+          HttpService.token = User.fromJson(LoginController.user!).accessToken;
+           Modular.to.pushNamed('/home/users/');
         } else {
         Modular.to.pushNamed('/login/');
         }});
     });
-    Modular.to.pushNamed('/home/users/');
+   
   }
 }
