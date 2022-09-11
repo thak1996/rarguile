@@ -89,9 +89,8 @@ class _LoginPageState extends State<LoginPage> {
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
                     onPressed: () {
-                      widget.store.loginKey.currentState!.validate()
-                          ? Modular.to.pushNamed('/home/users/')
-                          : Text('data');
+                      widget.store.login();
+                      widget.store.loginKey.currentState!.validate();
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

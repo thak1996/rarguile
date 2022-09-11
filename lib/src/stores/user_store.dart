@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:mobx/mobx.dart';
 import 'package:rarguile/src/models/account_model.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/service/api_service.dart';
 import 'package:rarguile/src/shared/failure.dart';
 part 'user_store.g.dart';
@@ -16,6 +17,18 @@ abstract class _UserStoreBase with Store {
   }) {
     this.service = service!;
   }
+
+
+  //TODO implementar token nas telas necessárias
+  @observable
+  String token = "";
+
+  @action
+  authToken(String authToken) {
+    token = authToken;
+  }
+
+
   @observable
   AccountModel _currentUser = AccountModel();
   @computed
@@ -38,8 +51,10 @@ abstract class _UserStoreBase with Store {
       Map<String, dynamic> body = {'email': email, 'senha': password};
       var response = await service.post(route: 'auth/login', body: body);
       if (response.statusCode == 200) {
+        Modular.to.navigate('/home/users/');
         var user = AccountModel.fromMap(response.body);
         setCurrentUser(userModel: user);
+        
       } else {
         throw HttpException(response.reasonPhrase);
       }
