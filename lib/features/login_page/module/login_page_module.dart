@@ -6,7 +6,7 @@ import 'package:rarguile/features/registration_page/registration_page_module.dar
 class LoginPageModule extends Module {
   @override
   List<Bind<Object>> get binds =>
-      [Bind<LoginStore>((i) => LoginStore(userStore: i()))];
+      [Bind<LoginStore>((index) => LoginStore(userStore: index()))];
 
   @override
   List<ModularRoute> get routes => [

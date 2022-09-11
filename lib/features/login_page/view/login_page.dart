@@ -45,7 +45,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: screenSize(context).height * .090),
                     DsInputField(
-                      
                       hintText: 'Digite seu email',
                       labelText: 'Digite seu email',
                       keyboardType: TextInputType.emailAddress,
