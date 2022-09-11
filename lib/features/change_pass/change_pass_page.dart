@@ -16,13 +16,11 @@ class ChangePassPage extends StatefulWidget {
 
 class _ChangePassPageState extends State<ChangePassPage> {
   TextEditingController codeController = TextEditingController();
-  final formMasterKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: formMasterKey,
         child: Container(
           height: screenSize(context).height,
           width: screenSize(context).width,
@@ -47,7 +45,7 @@ class _ChangePassPageState extends State<ChangePassPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .2),
                 DsInputField(
-                  controller: codeController,
+                  onChanged: (p0) {},
                   hintText: 'Digite o seu email',
                   keyboardType: TextInputType.emailAddress,
                   labelText: 'Digite o seu email',
@@ -56,11 +54,7 @@ class _ChangePassPageState extends State<ChangePassPage> {
                 SizedBox(height: screenSize(context).height * .1),
                 DsOutlinedButton(
                   label: 'Confirmar',
-                  onPressed: () {
-                    formMasterKey.currentState!.validate()
-                        ? Modular.to.pushNamed('/changePass/confirmation/')
-                        : debugPrint('Dados incorretos, tente novamente!');
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),

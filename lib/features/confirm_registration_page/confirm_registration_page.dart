@@ -17,13 +17,11 @@ class ConfirmRegistrationPage extends StatefulWidget {
 
 class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
   TextEditingController codeController = TextEditingController();
-  final formMasterKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: formMasterKey,
         child: Container(
           height: screenSize(context).height,
           width: screenSize(context).width,
@@ -48,7 +46,7 @@ class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .1),
                 DsInputField(
-                  controller: codeController,
+                  onChanged: (p0) {},
                   hintText: 'Digite o código aqui',
                   keyboardType: TextInputType.number,
                   labelText: 'Digite o código aqui',
@@ -58,9 +56,6 @@ class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
-                    formMasterKey.currentState!.validate()
-                        ? Modular.to.pushNamed('/changePass/confirmation/')
-                        : debugPrint('Dados incorretos, tente novamente!');
                   },
                 ),
               ],

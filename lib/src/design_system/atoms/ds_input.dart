@@ -4,20 +4,18 @@ import 'package:rarguile/src/shared/app_colors.dart';
 class DsInputField extends StatelessWidget {
   const DsInputField({
     super.key,
-    required this.controller,
     required this.keyboardType,
     required this.labelText,
     required this.hintText,
+    required this.onChanged,
     this.prefixIcon,
     this.suffixIcon,
     this.onPressed,
     this.validator,
-    this.obscureText = false,
-    this.onChanged,
     this.onSubmitted,
   });
 
-  final TextEditingController controller;
+
   final TextInputType keyboardType;
   final String labelText;
   final String hintText;
@@ -25,14 +23,12 @@ class DsInputField extends StatelessWidget {
   final IconData? suffixIcon;
   final VoidCallback? onPressed;
   final dynamic validator;
-  final bool obscureText;
-  final Function(String)? onChanged;
+  final Function(String) onChanged;
   final Function(String)? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 52,
       child: TextFormField(
         decoration: InputDecoration(
           labelText: labelText,
@@ -71,10 +67,8 @@ class DsInputField extends StatelessWidget {
         style: const TextStyle(color: primaryColor),
         keyboardType: keyboardType,
         textInputAction: TextInputAction.done,
-        controller: controller,
         validator: validator,
         //Password
-        obscureText: obscureText,
         onChanged: onChanged,
         onFieldSubmitted: onSubmitted,
       ),

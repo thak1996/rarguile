@@ -4,30 +4,28 @@ import 'package:rarguile/src/shared/app_colors.dart';
 class DsInputFieldPass extends StatelessWidget {
   const DsInputFieldPass({
     super.key,
-    required this.controller,
     required this.keyboardType,
     required this.labelText,
     required this.hintText,
+    this.obscureText,
+    this.suffixIconCustom,
+    this.onChanged,
     this.prefixIcon,
-    required this.suffixIcon,
     this.onPressed,
     this.validator,
-    this.obscureText = false,
-    required this.onSaved,
     this.onSubmitted,
     this.icon,
   });
 
-  final TextEditingController controller;
   final TextInputType keyboardType;
   final String labelText;
+  final void Function(String)? onChanged;
   final String hintText;
   final Icon? prefixIcon;
-  final GestureDetector suffixIcon;
+  final VoidCallback? suffixIconCustom;
   final VoidCallback? onPressed;
   final dynamic validator;
-  final bool obscureText;
-  final void Function(String?) onSaved;
+  final bool? obscureText;
   final Function(String)? onSubmitted;
   final dynamic icon;
 
@@ -38,7 +36,15 @@ class DsInputFieldPass extends StatelessWidget {
         labelText: labelText,
         hintText: hintText,
         prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        suffixIcon: suffixIconCustom != null
+            ? InkWell(
+                onTap: suffixIconCustom,
+                child: Icon(
+                  obscureText! ? Icons.visibility : Icons.visibility_off,
+                  color: azulVioleta,
+                ),
+              )
+            : null,
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: strokeDisable, width: 1),
           borderRadius: BorderRadius.circular(12),
@@ -68,12 +74,10 @@ class DsInputFieldPass extends StatelessWidget {
       style: const TextStyle(color: primaryColor),
       keyboardType: keyboardType,
       textInputAction: TextInputAction.done,
-      controller: controller,
       validator: validator,
-
       //Password
-      obscureText: obscureText,
-      onSaved: onSaved,
+      obscureText: obscureText ?? false,
+      onChanged: onChanged,
       onFieldSubmitted: onSubmitted,
     );
   }

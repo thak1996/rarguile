@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/features/home_page_users/home_page_users.dart';
+import 'package:rarguile/features/home_page_users/view/home_page_users.dart';
 
 class HomePageUsersModule extends Module {
   @override
