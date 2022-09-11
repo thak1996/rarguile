@@ -39,49 +39,47 @@ class _HomePageUsersState extends State<HomePageUsers> {
             final List<VideosModel> videos = snapshot.data!.toList();
             return Container(
               decoration: const BoxDecoration(color: whiteColor),
-              child: Flexible(
-                child: ListView.builder(
-                  shrinkWrap: false,
-                  itemCount: videos.length,
-                  itemBuilder: (context, index) {
-                    final video = videos[index];
-                    return Container(
-                      decoration: const BoxDecoration(color: whiteColor),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          right: screenSize(context).width * .02,
-                          left: screenSize(context).width * .02,
-                        ),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                                height: screenSize(context).width * .03),
-                            Row(
-                              children: [
-                                SizedBox(
-                                    width:
-                                        screenSize(context).width * 0.03),
-                                DsText(
-                                  text: video.topico,
-                                  style: h6Primary.copyWith(
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
-                            DsCard(
-                              title: video.nome,
-                              text: video.descricao,
-                              date: formatDate(
-                                DateTime.parse(video.createdAt),
-                                [dd, '/', mm, '/', yyyy],
-                              ),
-                            ),
-                          ],
-                        ),
+              child: ListView.builder(
+                shrinkWrap: false,
+                itemCount: videos.length,
+                itemBuilder: (context, index) {
+                  final video = videos[index];
+                  return Container(
+                    decoration: const BoxDecoration(color: whiteColor),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: screenSize(context).width * .02,
+                        left: screenSize(context).width * .02,
                       ),
-                    );
-                  },
-                ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                              height: screenSize(context).width * .03),
+                          Row(
+                            children: [
+                              SizedBox(
+                                  width:
+                                      screenSize(context).width * 0.03),
+                              DsText(
+                                text: video.topico,
+                                style: h6Primary.copyWith(
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          DsCard(
+                            title: video.nome,
+                            text: video.descricao,
+                            date: formatDate(
+                              DateTime.parse(video.createdAt),
+                              [dd, '/', mm, '/', yyyy],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
               ),
             );
           } else if (!snapshot.hasData) {

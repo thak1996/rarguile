@@ -15,26 +15,24 @@ abstract class _LoginStoreBase with Store {
   }) {
     this.userStore = userStore!;
   }
-
+  
   @observable
   LoginModel loginModel = LoginModel();
-
   @action
   void setLogin({String? email, String? password}) {
     loginModel = loginModel.copyWith(email: email, password: password);
   }
-
   @action
   Future<void> login() async {
     await userStore.user(email: loginModel.email!, password: loginModel.password!);
   }
 
+
+
   @observable
   bool _obscureTextCustom = true;
-
   @computed
   bool get obscureText => _obscureTextCustom;
-
   @action
   void callObscureText() {
     _obscureTextCustom = !_obscureTextCustom;

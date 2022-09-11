@@ -30,8 +30,8 @@ class VideosDataSource {
       throw Failure(message: 'Estamos passando por dificuldades');
     } on FormatException {
       throw Failure(message: 'Estamos passando por dificuldades');
-    } catch (e) {
-      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
+    } catch (error) {
+      throw Failure(message: 'Ocorreu um erro: ${error.toString()}');
     }
   }
 }
