@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/features/confirm_registration_page/confirm_registration_page.dart';
+import 'package:rarguile/features/registration_confirm_page/confirm_registration_page.dart';
 import 'package:rarguile/features/registration_page/registration_page.dart';
 
 class RegistrationPageModule extends Module {

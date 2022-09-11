@@ -6,8 +6,8 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:rarguile/src/home/datasource/home_datasource.dart' as _i3;
-import 'package:rarguile/src/home/model/home_model.dart' as _i5;
+import 'package:rarguile/src/datasources/home/datasource/home_datasource.dart' as _i3;
+import 'package:rarguile/features/home_page_users/model/home_model.dart' as _i5;
 import 'package:rarguile/src/service/api_service.dart' as _i2;
 
 // ignore_for_file: type=lint

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rarguile/src/login/datasource/login_datasource.dart';
+import 'package:rarguile/src/datasources/login/datasource/login_datasource.dart';
 import 'package:rarguile/src/service/http_service.dart';
 
 void main() {

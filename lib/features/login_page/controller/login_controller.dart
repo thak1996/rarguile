@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/login/model/user_model.dart';
+import 'package:rarguile/features/login_page/model/user_model.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/service/shared_preferences_service.dart';
 

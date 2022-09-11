@@ -18,7 +18,7 @@ class ConfirmRegistrationPage extends StatefulWidget {
 class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
   TextEditingController codeController = TextEditingController();
   final formMasterKey = GlobalKey<FormState>();
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

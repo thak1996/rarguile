@@ -1,11 +1,11 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/home/datasource/home_datasource.dart';
+import 'package:rarguile/src/datasources/home/datasource/home_datasource.dart';
 import 'package:rarguile/src/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/design_system/organisms/ds_card.dart';
-import 'package:rarguile/src/home/model/home_model.dart';
+import 'package:rarguile/features/home_page_users/model/home_model.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:rarguile/src/login/model/user_model.dart';
+import 'package:rarguile/features/registration_page/model/register_model.dart';
 import 'package:rarguile/src/service/api_service.dart';
 import 'package:rarguile/src/shared/failure.dart';
 
@@ -9,12 +9,11 @@ class LoginDataSource {
 
   LoginDataSource(this.service);
 
-  Future<User> login({required String email, required String password}) async {
+  Future<RegisterModel> register({required String email, required String password, required String name, required String acessCode}) async {
     try {
-      final response = await service.post(
-          route: '/auth/login', body: {"email": email, "senha": password});
-      if (response.statusCode == 200) {
-        final user = User.fromJson(response.body);
+      final response = await service.post(route: '/auth/cadastrar', body: {"email": email, "senha": password, "nome": name, "codigoAcesso": password});
+      if (response.statusCode == 201) {
+        final user = RegisterModel.fromJson(response.body);
         return user;
       }
       throw HttpException(response.reasonPhrase);
