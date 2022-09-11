@@ -4,7 +4,7 @@ import 'package:rarguile/features/login_page/controller/login_controller.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input_password.dart';
-import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
+import 'package:rarguile/src/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/home/datasource/home_datasource.dart';
 import 'package:rarguile/src/login/datasource/login_datasource.dart';

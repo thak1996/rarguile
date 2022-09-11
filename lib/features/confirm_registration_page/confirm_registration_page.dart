@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
-import 'package:rarguile/src/design_system/atoms/ds_midiaquery.dart';
+import 'package:rarguile/src/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
