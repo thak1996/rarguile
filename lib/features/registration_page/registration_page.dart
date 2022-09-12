@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/src/datasources/register/register.datasource.dart';
 import 'package:rarguile/src/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/design_system/atoms/ds_mediaquery.dart';
+import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import 'package:rarguile/src/validation/validator.dart';
@@ -18,7 +20,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController classController = TextEditingController();
+  TextEditingController acessCodeController = TextEditingController();
+  final formMasterKey = GlobalKey<FormState>();
+  final service = HttpService();
+  late final datasource = RegisterDataSource(service);
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +71,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .012),
                   DsInputField(
-                    onChanged: (p0) {},
+                    controller: acessCodeController,
                     hintText: 'Digite o código da turma',
                     keyboardType: TextInputType.number,
                     labelText: 'Digite o código da turma',
@@ -75,7 +80,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   SizedBox(height: screenSize(context).height * .098),
                   DsOutlinedButton(
                     label: 'Cadastrar',
-                    onPressed: () {},
+                    onPressed: () {
+                      datasource.register(
+                          email: emailController.text,
+                          password: passwordController.text,
+                          name: nameController.text,
+                          acessCode: acessCodeController.text);
+                          
+                      formMasterKey.currentState!.validate();
+                    },
                   ),
                 ],
               ),

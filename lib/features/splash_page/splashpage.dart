@@ -1,6 +1,10 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rarguile/features/login_page/controller/login_controller.dart';
+import 'package:rarguile/features/login_page/model/user_model.dart';
+import 'package:rarguile/src/service/http_service.dart';
+import 'package:rarguile/src/service/shared_preferences_service.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
