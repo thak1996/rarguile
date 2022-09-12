@@ -15,7 +15,9 @@ class _SplashArtState extends State<SplashArt> {
   void initState() {
     Future.delayed(
       const Duration(seconds: 2),
-    ).then((value) => Modular.to.navigate('/login/'));
+    ).then(
+      (value) => authLogin(),
+    );
     super.initState();
   }
 

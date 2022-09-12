@@ -6,6 +6,7 @@ class HttpService implements ApiService {
 
   @override
   Future get({required String route, Map<String, dynamic>? params}) async {
+    print(token);
     Uri url = Uri.http(baseURL, route);
     var response = await http.get(url);
     return response;
