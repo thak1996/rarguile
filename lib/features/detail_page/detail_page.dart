@@ -7,18 +7,25 @@ import 'package:rarguile/src/widgets/hide_show_widget.dart';
 import 'package:rarguile/src/widgets/video_widget.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({super.key});
+  const DetailPage({
+    super.key,
+  });
 
   @override
   State<DetailPage> createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
+  final String appBarTitle = '';
+  final String videoUrl = '';
+  final String title = '';
+  final String description = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      appBar: const DsAppBar(title: "VideoTube"),
+      appBar: DsAppBar(title: appBarTitle, showLoginBtn: false),
       body: ListView(
         children: [
           Column(
@@ -35,9 +42,8 @@ class _DetailPageState extends State<DetailPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const VideoPage(
-                            videoUrl:
-                                'https://us06web.zoom.us/rec/play/utiRp1YklCRN38WhDNrcemK971bVwbgcRbCBk_W9FzQ0hBJGRf496aIqjiWcaenVsUmaS5cyUB6roX1I.VMr84n8lLm-0xyIp',
+                          builder: (context) => VideoPage(
+                            videoUrl: videoUrl,
                           ),
                         ),
                       );
@@ -49,12 +55,11 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ]),
               DsDescription(
-                title: 'Titulo do Video',
-                description:
-                    'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhafffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+                title: title,
+                description: description,
               ),
-              HideShow(),
-              DsRelated(),
+              const HideShow(),
+              const DsRelated(),
             ],
           ),
         ],

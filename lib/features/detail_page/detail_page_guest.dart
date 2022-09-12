@@ -14,25 +14,28 @@ class DetailPageGuest extends StatefulWidget {
 }
 
 class _DetailPageGuestState extends State<DetailPageGuest> {
+  final String appBarTitle = '';
+  final String videoUrl = '';
+  final String title = '';
+  final String description = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      appBar: const DsAppBar(title: "VideoTube"),
+      appBar:
+          DsAppBar(title: appBarTitle, onPressed: () {}, showLoginBtn: true),
       body: ListView(
         children: [
           Column(
-            children: const [
-              YTVideo(
-                  videoUrl:
-                      'https://www.youtube.com/watch?v=fcMlPEVSacs&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S'),
+            children: [
+              YTVideo(videoUrl: videoUrl),
               DsDescription(
-                title: 'Titulo do Video',
-                description:
-                    'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhafffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+                title: title,
+                description: description,
               ),
-              HideShow(),
-              DsRelated(),
+              const HideShow(),
+              const DsRelated(),
             ],
           ),
         ],

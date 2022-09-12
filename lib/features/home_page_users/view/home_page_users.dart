@@ -25,7 +25,10 @@ class _HomePageUsersState extends State<HomePageUsers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DsAppBar(title: 'Raro Tube - Home'),
+      appBar: DsAppBar(
+        title: 'Raro Tube - Home',
+        showLoginBtn: false,
+      ),
       body: FutureBuilder<List<VideosModel>>(
         future: widget.store.getVideos(),
         builder: (context, snapshot) {
@@ -47,13 +50,10 @@ class _HomePageUsersState extends State<HomePageUsers> {
                       ),
                       child: Column(
                         children: [
-                          SizedBox(
-                              height: screenSize(context).width * .03),
+                          SizedBox(height: screenSize(context).width * .03),
                           Row(
                             children: [
-                              SizedBox(
-                                  width:
-                                      screenSize(context).width * 0.03),
+                              SizedBox(width: screenSize(context).width * 0.03),
                               DsText(
                                 text: video.topico,
                                 style: h6Primary.copyWith(

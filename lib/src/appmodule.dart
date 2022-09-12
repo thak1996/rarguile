@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/features/change_pass/change_pass_page_module.dart';
+import 'package:rarguile/features/detail_page/detail_page.dart';
 import 'package:rarguile/features/home_page_users/module/home_page_users_module.dart';
 import 'package:rarguile/features/login_page/module/login_page_module.dart';
 import 'package:rarguile/features/registration_page/registration_page_module.dart';
@@ -22,7 +23,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => SplashArt(),
+          child: (context, args) => DetailPage(),
         ),
         ModuleRoute(
           '/login/',
