@@ -9,6 +9,7 @@ class LoginStore = _LoginStoreBase with _$LoginStore;
 abstract class _LoginStoreBase with Store {
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   late UserStore userStore;
+  
 
   _LoginStoreBase({
     UserStore? userStore,
@@ -18,13 +19,19 @@ abstract class _LoginStoreBase with Store {
   
   @observable
   LoginModel loginModel = LoginModel();
+
+
+  //Cria uma cópia do objeto loginModel e atualiza nosso observable com seus novos valores set'ados
   @action
   void setLogin({String? email, String? password}) {
     loginModel = loginModel.copyWith(email: email, password: password);
   }
+
+
+
   @action
   Future<void> login() async {
-    await userStore.user(email: loginModel.email!, password: loginModel.password!);
+    await userStore.userLogin(email: loginModel.email!, password: loginModel.password!);
   }
 
 

@@ -1,13 +1,18 @@
 import 'package:http/http.dart' as http;
-import 'package:rarguile/src/service/api_service.dart';
+import 'package:rarguile/src/interfaces/api_service_interface.dart';
+import 'package:rarguile/src/stores/user_store.dart';
 
-class HttpService implements ApiService {
+class HttpService implements IApiService {
   var baseURL = "44.199.200.211:3325";
+  late UserStore userStore;
 
   @override
-  Future get({required String route, Map<String, dynamic>? params}) async {
+  Future get(
+      {required String route,
+      Map<String, dynamic>? params,
+      Map<String, String>? headers}) async {
     Uri url = Uri.http(baseURL, route);
-    var response = await http.get(url);
+    var response = await http.get(url, headers: headers);
     return response;
   }
 

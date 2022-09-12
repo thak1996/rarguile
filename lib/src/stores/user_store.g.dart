@@ -16,6 +16,12 @@ mixin _$UserStore on _UserStoreBase, Store {
       (_$currentUserComputed ??= Computed<AccountModel>(() => super.currentUser,
               name: '_UserStoreBase.currentUser'))
           .value;
+  Computed<String?>? _$tokenComputed;
+
+  @override
+  String? get token => (_$tokenComputed ??=
+          Computed<String?>(() => super.token, name: '_UserStoreBase.token'))
+      .value;
 
   late final _$_currentUserAtom =
       Atom(name: '_UserStoreBase._currentUser', context: context);
@@ -33,25 +39,61 @@ mixin _$UserStore on _UserStoreBase, Store {
     });
   }
 
-  late final _$userAsyncAction =
-      AsyncAction('_UserStoreBase.user', context: context);
+  late final _$_tokenAtom =
+      Atom(name: '_UserStoreBase._token', context: context);
 
   @override
-  Future<void> user({required String email, required String password}) {
-    return _$userAsyncAction
-        .run(() => super.user(email: email, password: password));
+  String? get _token {
+    _$_tokenAtom.reportRead();
+    return super._token;
+  }
+
+  @override
+  set _token(String? value) {
+    _$_tokenAtom.reportWrite(value, super._token, () {
+      super._token = value;
+    });
+  }
+
+  late final _$getAllVideosAsyncAction =
+      AsyncAction('_UserStoreBase.getAllVideos', context: context);
+
+  @override
+  Future<List<VideosModel>> getAllVideos() {
+    return _$getAllVideosAsyncAction.run(() => super.getAllVideos());
+  }
+
+  late final _$userLoginAsyncAction =
+      AsyncAction('_UserStoreBase.userLogin', context: context);
+
+  @override
+  Future<void> userLogin({required String email, required String password}) {
+    return _$userLoginAsyncAction
+        .run(() => super.userLogin(email: email, password: password));
   }
 
   late final _$_UserStoreBaseActionController =
       ActionController(name: '_UserStoreBase', context: context);
 
   @override
-  void setCurrentUser({AccountModel? userModel, String? name, String? email}) {
+  void setCurrentUser(
+      {AccountModel? userModel, String? name, String? email, String? token}) {
     final _$actionInfo = _$_UserStoreBaseActionController.startAction(
         name: '_UserStoreBase.setCurrentUser');
     try {
-      return super
-          .setCurrentUser(userModel: userModel, name: name, email: email);
+      return super.setCurrentUser(
+          userModel: userModel, name: name, email: email, token: token);
+    } finally {
+      _$_UserStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setToken() {
+    final _$actionInfo = _$_UserStoreBaseActionController.startAction(
+        name: '_UserStoreBase.setToken');
+    try {
+      return super.setToken();
     } finally {
       _$_UserStoreBaseActionController.endAction(_$actionInfo);
     }
@@ -60,7 +102,8 @@ mixin _$UserStore on _UserStoreBase, Store {
   @override
   String toString() {
     return '''
-currentUser: ${currentUser}
+currentUser: ${currentUser},
+token: ${token}
     ''';
   }
 }

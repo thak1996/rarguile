@@ -35,7 +35,7 @@ class _DetailPageState extends State<DetailPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => VideoPage(
+                          builder: (context) => const VideoPage(
                             videoUrl:
                                 'https://us06web.zoom.us/rec/play/utiRp1YklCRN38WhDNrcemK971bVwbgcRbCBk_W9FzQ0hBJGRf496aIqjiWcaenVsUmaS5cyUB6roX1I.VMr84n8lLm-0xyIp',
                           ),

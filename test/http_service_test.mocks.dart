@@ -3,14 +3,16 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i6;
 
-import 'package:mockito/mockito.dart' as _i1;
-import 'package:rarguile/features/home_page_users/datasource/home_datasource.dart'
-    as _i3;
-import 'package:rarguile/features/home_page_users/models/home_model.dart'
+import 'package:flutter/cupertino.dart' as _i1;
+import 'package:mobx/mobx.dart' as _i4;
+import 'package:mockito/mockito.dart' as _i2;
+import 'package:rarguile/features/home_page_users/controller/home_store.dart'
     as _i5;
-import 'package:rarguile/src/interfaces/api_service_interface.dart' as _i2;
+import 'package:rarguile/features/home_page_users/models/home_model.dart'
+    as _i7;
+import 'package:rarguile/src/stores/user_store.dart' as _i3;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,27 +25,55 @@ import 'package:rarguile/src/interfaces/api_service_interface.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeApiService_0 extends _i1.SmartFake implements _i2.ApiService {
-  _FakeApiService_0(Object parent, Invocation parentInvocation)
+class _FakeGlobalKey_0<T extends _i1.State<_i1.StatefulWidget>>
+    extends _i2.SmartFake implements _i1.GlobalKey<T> {
+  _FakeGlobalKey_0(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
-/// A class which mocks [VideosDataSource].
+class _FakeUserStore_1 extends _i2.SmartFake implements _i3.UserStore {
+  _FakeUserStore_1(Object parent, Invocation parentInvocation)
+      : super(parent, parentInvocation);
+}
+
+class _FakeReactiveContext_2 extends _i2.SmartFake
+    implements _i4.ReactiveContext {
+  _FakeReactiveContext_2(Object parent, Invocation parentInvocation)
+      : super(parent, parentInvocation);
+}
+
+/// A class which mocks [HomeStore].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockVideosDataSource extends _i1.Mock implements _i3.VideosDataSource {
-  MockVideosDataSource() {
-    _i1.throwOnMissingStub(this);
+class MockHomeStore extends _i2.Mock implements _i5.HomeStore {
+  MockHomeStore() {
+    _i2.throwOnMissingStub(this);
   }
 
   @override
-  _i2.ApiService get service => (super.noSuchMethod(Invocation.getter(#service),
-          returnValue: _FakeApiService_0(this, Invocation.getter(#service)))
-      as _i2.ApiService);
+  _i1.GlobalKey<_i1.FormState> get loginKey => (super.noSuchMethod(
+      Invocation.getter(#loginKey),
+      returnValue: _FakeGlobalKey_0<_i1.FormState>(
+          this, Invocation.getter(#loginKey))) as _i1.GlobalKey<_i1.FormState>);
   @override
-  _i4.Future<List<_i5.VideosModel>> getAllVideos() =>
-      (super.noSuchMethod(Invocation.method(#getAllVideos, []),
+  _i3.UserStore get userStore => (super.noSuchMethod(
+          Invocation.getter(#userStore),
+          returnValue: _FakeUserStore_1(this, Invocation.getter(#userStore)))
+      as _i3.UserStore);
+  @override
+  set userStore(_i3.UserStore? _userStore) =>
+      super.noSuchMethod(Invocation.setter(#userStore, _userStore),
+          returnValueForMissingStub: null);
+  @override
+  _i4.ReactiveContext get context =>
+      (super.noSuchMethod(Invocation.getter(#context),
               returnValue:
-                  _i4.Future<List<_i5.VideosModel>>.value(<_i5.VideosModel>[]))
-          as _i4.Future<List<_i5.VideosModel>>);
+                  _FakeReactiveContext_2(this, Invocation.getter(#context)))
+          as _i4.ReactiveContext);
+  @override
+  _i6.Future<List<_i7.VideosModel>> getVideos() =>
+      (super.noSuchMethod(Invocation.method(#getVideos, []),
+              returnValue:
+                  _i6.Future<List<_i7.VideosModel>>.value(<_i7.VideosModel>[]))
+          as _i6.Future<List<_i7.VideosModel>>);
 }

@@ -42,8 +42,8 @@ class AccountModel {
 
   factory AccountModel.fromMap(Map<String, dynamic> map) {
     return AccountModel(
-      name: map['name'] != null ? map['name'] as String : null,
-      token: map['token'] != null ? map['token'] as String : null,
+      name: map['nome'] != null ? map['nome'] as String : null,
+      token: map['access_token'] != null ? map['access_token'] as String : null,
       id: map['id'] != null ? map['id'] as String : null,
     );
   }
