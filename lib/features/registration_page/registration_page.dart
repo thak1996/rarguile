@@ -38,9 +38,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Text(
                     'Cadastro',
                     style: h5Primary.copyWith(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 27,
-                    ),
+                        fontWeight: FontWeight.w700, fontSize: 27),
                   ),
                   SizedBox(height: screenSize(context).height * .193),
                   DsInputField(
@@ -77,9 +75,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   SizedBox(height: screenSize(context).height * .098),
                   DsOutlinedButton(
                     label: 'Cadastrar',
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                   ),
                 ],
               ),

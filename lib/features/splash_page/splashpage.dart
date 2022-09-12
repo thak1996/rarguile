@@ -16,7 +16,7 @@ class _SplashArtState extends State<SplashArt> {
     Future.delayed(
       const Duration(seconds: 2),
     ).then(
-      (value) => authLogin(),
+      (value) => Modular.to.navigate('/login/'),
     );
     super.initState();
   }
@@ -25,25 +25,16 @@ class _SplashArtState extends State<SplashArt> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
         decoration: const BoxDecoration(
           color: primaryColor,
         ),
         child: AnimatedCard(
           direction: AnimatedCardDirection.top,
           duration: const Duration(seconds: 1),
-          child: Positioned(
-            child: Center(
-              child: Hero(
-                tag: 'CapeloSplashArt',
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset('assets/images/capelo-splashart.png')
-                  ],
-                ),
-              ),
+          child: Center(
+            child: Hero(
+              tag: 'CapeloSplashArt',
+              child: Image.asset('assets/images/capelo-splashart.png'),
             ),
           ),
         ),

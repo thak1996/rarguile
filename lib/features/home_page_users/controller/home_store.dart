@@ -9,18 +9,14 @@ class HomeStore = HomeStoreBase with _$HomeStore;
 abstract class HomeStoreBase with Store {
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   late UserStore userStore;
-  
 
-  HomeStoreBase({
-    UserStore? userStore,
-  }) {
+  HomeStoreBase({UserStore? userStore}) {
     this.userStore = userStore!;
   }
 
   @action
   Future<List<VideosModel>> getVideos() async {
-    var response =  await userStore.getAllVideos();
+    var response = await userStore.getAllVideos();
     return response;
   }
-
 }

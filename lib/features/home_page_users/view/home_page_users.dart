@@ -13,22 +13,16 @@ import 'package:rarguile/src/shared/styles.dart';
 class HomePageUsers extends StatefulWidget {
   const HomePageUsers({super.key, required this.store});
   final HomeStore store;
+
   @override
   State<HomePageUsers> createState() => _HomePageUsersState();
 }
 
 class _HomePageUsersState extends State<HomePageUsers> {
-  
-  TextEditingController searchController = TextEditingController();
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DsAppBar(
-        title: 'Raro Tube - Home',
-        showLoginBtn: false,
-      ),
+      appBar: const DsAppBar(title: 'Raro Tube - Home', showLoginBtn: false),
       body: FutureBuilder<List<VideosModel>>(
         future: widget.store.getVideos(),
         builder: (context, snapshot) {

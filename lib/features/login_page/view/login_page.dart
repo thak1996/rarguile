@@ -77,8 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: const DsText(
                           text: 'Esqueci minha senha',
                           style: TextStyle(
-                              color: primaryColor,
-                              backgroundColor: whiteColor),
+                              color: primaryColor, backgroundColor: whiteColor),
                         ),
                       ),
                     ),
@@ -89,8 +88,9 @@ class _LoginPageState extends State<LoginPage> {
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
                     onPressed: () {
-                      widget.store.login();
-                      widget.store.loginKey.currentState!.validate();
+                      widget.store.loginKey.currentState!.validate()
+                          ? widget.store.login()
+                          : debugPrint('Dados incorretos');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),
