@@ -1,6 +1,6 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:rarguile/features/home_page_users/datasource/home_datasource.dart';
+import 'package:rarguile/features/home_page_users/controller/home_store.dart';
 import 'package:rarguile/src/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/design_system/molecules/ds_app_bar.dart';
@@ -11,22 +11,16 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
 class HomePageUsers extends StatefulWidget {
-  const HomePageUsers({super.key});
-
+  const HomePageUsers({super.key, required this.store});
+  final HomeStore store;
   @override
   State<HomePageUsers> createState() => _HomePageUsersState();
 }
 
 class _HomePageUsersState extends State<HomePageUsers> {
-  final HttpService service = HttpService();
-  late final VideosDataSource dataSource;
+  
   TextEditingController searchController = TextEditingController();
 
-  @override
-  void initState() {
-    dataSource = VideosDataSource(service);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +30,7 @@ class _HomePageUsersState extends State<HomePageUsers> {
         showLoginBtn: false,
       ),
       body: FutureBuilder<List<VideosModel>>(
-        future: dataSource.getAllVideos(),
+        future: widget.store.getVideos(),
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             final List<VideosModel> videos = snapshot.data!.toList();
