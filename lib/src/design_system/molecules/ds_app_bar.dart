@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:rarguile/src/design_system/atoms/ds_button_icon.dart';
 import 'package:rarguile/src/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
 class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DsAppBar({super.key, required this.title});
+  const DsAppBar(
+      {super.key,
+      required this.title,
+      this.onPressed,
+      required this.showLoginBtn});
 
   final String title;
+  final VoidCallback? onPressed;
+  final bool showLoginBtn;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +21,30 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       backgroundColor: whiteColor,
       elevation: 0,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Divider(height: 40, color: whiteColor),
-          DsText(text: title, style: h5Primary),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Divider(height: 35, color: whiteColor),
+              DsText(text: title, style: h5Primary),
+            ],
+          ),
+          Visibility(
+            visible: showLoginBtn == true,
+            child: Column(
+              children: [
+                const Divider(height: 35, color: whiteColor),
+                DSIconButton(
+                  icon: const Icon(Icons.login),
+                  onPressed: () {
+                    onPressed;
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
