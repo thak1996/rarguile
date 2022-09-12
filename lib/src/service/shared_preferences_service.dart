@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService implements ISharedPreferencesService {
   late final SharedPreferences sharedPreferences;
-  
 
   @override
   Future<void> writeString(String user) async {

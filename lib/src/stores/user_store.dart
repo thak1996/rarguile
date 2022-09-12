@@ -58,7 +58,6 @@ abstract class _UserStoreBase with Store {
   Future<List<VideosModel>> getAllVideos() async {
     try {
       final response = await service.get(route: '/videos/', headers: {"Authorization": "bearer $_token"});
-      print("segundo $_token");
       if (response.statusCode == 200) {
         List<VideosModel> users = [];
         var decode = jsonDecode(response.body);
@@ -89,7 +88,6 @@ abstract class _UserStoreBase with Store {
       var response = await service.post(route: 'auth/login', body: body);
       if (response.statusCode == 200) {
         AccountModel user =  AccountModel.fromMap(jsonDecode(response.body));
-        print(response.body);
         setCurrentUser(userModel: user);
         setToken();
         getAllVideos();
