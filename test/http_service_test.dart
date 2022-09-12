@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:rarguile/features/home_page_users/datasource/home_datasource.dart';
+import 'package:rarguile/features/home_page_users/controller/home_store.dart';
 
 
-@GenerateMocks([VideosDataSource])
+@GenerateMocks([HomeStore])
 void main() {
   test(
     'test do repositório',
