@@ -19,13 +19,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController classController = TextEditingController();
-  final formMasterKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: formMasterKey,
         child: SingleChildScrollView(
           child: Container(
             height: screenSize(context).height,
@@ -46,7 +44,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .193),
                   DsInputField(
-                    controller: nameController,
+                    onChanged: (p0) {},
                     hintText: 'Digite seu nome',
                     keyboardType: TextInputType.name,
                     labelText: 'Digite seu nome',
@@ -54,7 +52,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .012),
                   DsInputField(
-                    controller: emailController,
+                    onChanged: (p0) {},
                     hintText: 'Digite seu email',
                     keyboardType: TextInputType.emailAddress,
                     labelText: 'Digite seu email',
@@ -62,8 +60,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .012),
                   DsInputField(
-                    obscureText: true,
-                    controller: passwordController,
+                    onChanged: (p0) {},
                     hintText: 'Digite sua senha',
                     keyboardType: TextInputType.visiblePassword,
                     labelText: 'Digite sua senha',
@@ -71,7 +68,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   SizedBox(height: screenSize(context).height * .012),
                   DsInputField(
-                    controller: classController,
+                    onChanged: (p0) {},
                     hintText: 'Digite o código da turma',
                     keyboardType: TextInputType.number,
                     labelText: 'Digite o código da turma',
@@ -81,9 +78,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   DsOutlinedButton(
                     label: 'Cadastrar',
                     onPressed: () {
-                      formMasterKey.currentState!.validate()
-                          ? Modular.to.pushNamed('/registration/confirmation/')
-                          : debugPrint('Dados  incorretos, tente novamente!');
+
                     },
                   ),
                 ],

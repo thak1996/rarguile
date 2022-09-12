@@ -14,12 +14,10 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
   final double _progress = 0;
   late InAppWebViewController videoController;
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       body: Stack(
         children: [
           InAppWebView(

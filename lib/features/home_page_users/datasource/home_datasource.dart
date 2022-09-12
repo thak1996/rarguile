@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/home/model/home_model.dart';
+import 'package:rarguile/features/home_page_users/models/home_model.dart';
 import 'package:rarguile/src/service/api_service.dart';
 import 'package:rarguile/src/shared/failure.dart';
 
@@ -30,8 +30,8 @@ class VideosDataSource {
       throw Failure(message: 'Estamos passando por dificuldades');
     } on FormatException {
       throw Failure(message: 'Estamos passando por dificuldades');
-    } catch (e) {
-      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
+    } catch (error) {
+      throw Failure(message: 'Ocorreu um erro: ${error.toString()}');
     }
   }
 }

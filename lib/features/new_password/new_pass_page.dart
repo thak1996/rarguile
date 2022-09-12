@@ -17,13 +17,11 @@ class NewPassPage extends StatefulWidget {
 class _NewPassPageState extends State<NewPassPage> {
   TextEditingController passwordOneController = TextEditingController();
   TextEditingController passwordTwoController = TextEditingController();
-  final formMasterKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: formMasterKey,
         child: Container(
           height: screenSize(context).height,
           width: screenSize(context).width,
@@ -47,7 +45,7 @@ class _NewPassPageState extends State<NewPassPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .2),
                 DsInputField(
-                  controller: passwordOneController,
+                  onChanged: (p0) {},
                   hintText: 'Digite sua nova senha',
                   keyboardType: TextInputType.text,
                   labelText: 'Digite sua nova senha',
@@ -55,7 +53,7 @@ class _NewPassPageState extends State<NewPassPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .014),
                 DsInputField(
-                  controller: passwordTwoController,
+                  onChanged: (p0) {},
                   hintText: 'Confirme sua nova senha',
                   keyboardType: TextInputType.text,
                   labelText: 'Confirme sua nova senha',
@@ -65,9 +63,9 @@ class _NewPassPageState extends State<NewPassPage> {
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
-                    formMasterKey.currentState!.validate()
-                        ? Modular.to.pushNamed('/home/')
-                        : debugPrint('Dados incorretos, tente novamente!');
+                    // formMasterKey.currentState!.validate()
+                    //     ? Modular.to.pushNamed('/home/')
+                    //     : debugPrint('Dados incorretos, tente novamente!');
                   },
                 ),
               ],
