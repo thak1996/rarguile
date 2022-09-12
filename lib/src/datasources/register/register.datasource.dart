@@ -19,7 +19,7 @@ class RegisterDataSource {
         "email": email,
         "senha": password,
         "nome": name,
-        "codigoAcesso": password
+        "codigoAcesso": acessCode
       });
       if (response.statusCode == 201) {
         Modular.to.pushNamed('/login/');
