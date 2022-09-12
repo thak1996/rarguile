@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
-import 'package:rarguile/src/interfaces/api_service_interface.dart';
-import 'package:rarguile/src/stores/user_store.dart';
+import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
+
+import '../shared/stores/user_store.dart';
 
 class HttpService implements IApiService {
   var baseURL = "44.199.200.211:3325";
