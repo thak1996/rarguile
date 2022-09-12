@@ -10,7 +10,7 @@ import 'package:rarguile/features/home_page_users/datasource/home_datasource.dar
     as _i3;
 import 'package:rarguile/features/home_page_users/models/home_model.dart'
     as _i5;
-import 'package:rarguile/src/service/api_service.dart' as _i2;
+import 'package:rarguile/src/interfaces/api_service_interface.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
