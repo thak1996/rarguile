@@ -11,6 +11,6 @@ class HomePageUsersModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(Modular.initialRoute,
-            child: (context, args) => const HomePageUsers())
+            child: (context, args) =>  HomePageUsers(store: Modular.get(),))
       ];
 }

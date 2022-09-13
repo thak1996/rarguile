@@ -92,6 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                       widget.store.loginKey.currentState!.validate()
                           ? widget.store.login()
                           : debugPrint('Dados incorretos');
+                        
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),
