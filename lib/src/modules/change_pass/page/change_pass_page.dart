@@ -23,7 +23,6 @@ class _ChangePassPageState extends State<ChangePassPage> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: inserir appBar para termos opção de voltar
     return Scaffold(
       appBar: const DsAppBar(title: '', showLoginBtn: true),
       body: Form(

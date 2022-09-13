@@ -5,6 +5,7 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/shared/constants/styles.dart';
+import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
 
 class ConfirmChangePassPage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const DsAppBar(title: '',showLoginBtn: true,),
       body: Form(
         key: widget.store.requestCodeKey,
         child: Container(
@@ -53,7 +55,7 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
                   labelText: 'Digite o código aqui',
                   controller: codeController,
                 ),
-                SizedBox(height: screenSize(context).height * .1),
+                SizedBox(height: screenSize(context).height * .02),
                 DsInputField(
                   hintText: 'Digite a nova senha aqui',
                   keyboardType: TextInputType.number,
