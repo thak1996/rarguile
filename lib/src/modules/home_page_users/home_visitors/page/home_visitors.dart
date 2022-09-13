@@ -1,13 +1,13 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:rarguile/src/modules/home_page_users/models/home_model.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_card.dart';
 import 'package:rarguile/src/modules/home_page_users/controller/home_store.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
 
 class HomePageVisitors extends StatefulWidget {
   const HomePageVisitors({super.key, required this.store});
