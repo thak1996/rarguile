@@ -22,9 +22,10 @@ abstract class LoginStoreBase with Store {
 
   //Cria uma cópia do objeto loginModel e atualiza nosso observable com seus novos valores set'ados
   @action
-  void setLogin({String? email, String? password}) {
+  void setLoginUser({String? email, String? password}) {
     loginModel = loginModel.copyWith(email: email, password: password);
   }
+
   @action
   Future<void> login() async {
     await userStore.userLogin(

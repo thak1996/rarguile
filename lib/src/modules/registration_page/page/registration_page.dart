@@ -85,7 +85,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     label: 'Cadastrar',
                     onPressed: () {
                       store.registrationPage.currentState!.validate()
-                          ? store.registerUser()
+                          ? store.register()
                           : debugPrint('Seis é Muito Troll');
                     },
                   ),

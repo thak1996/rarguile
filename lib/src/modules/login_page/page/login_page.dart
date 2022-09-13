@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                     keyboardType: TextInputType.emailAddress,
                     validator: Validator.validateEmail,
                     onChanged: (email) {
-                      widget.store.setLogin(email: email);
+                      widget.store.setLoginUser(email: email);
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: widget.store.obscureText,
                         suffixIconCustom: widget.store.callObscureText,
                         onChanged: (password) {
-                          widget.store.setLogin(password: password);
+                          widget.store.setLoginUser(password: password);
                         });
                   }),
                   SizedBox(height: screenSize(context).height * .014),

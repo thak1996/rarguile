@@ -25,17 +25,12 @@ mixin _$RegistrationStore on RegistrationStoreBase, Store {
     });
   }
 
-  late final _$registerUserAsyncAction =
-      AsyncAction('RegistrationStoreBase.registerUser', context: context);
+  late final _$registerAsyncAction =
+      AsyncAction('RegistrationStoreBase.register', context: context);
 
   @override
-  Future<void> registerUser(
-      {String? email, String? password, String? name, String? codigoAcesso}) {
-    return _$registerUserAsyncAction.run(() => super.registerUser(
-        email: email,
-        password: password,
-        name: name,
-        codigoAcesso: codigoAcesso));
+  Future<void> register() {
+    return _$registerAsyncAction.run(() => super.register());
   }
 
   late final _$RegistrationStoreBaseActionController =

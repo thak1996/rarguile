@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:rarguile/src/modules/login_page/models/account_model.dart';
+import 'package:rarguile/src/modules/registration_page/models/register_model.dart';
 import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
 import 'package:rarguile/src/shared/failure.dart';
 
@@ -84,4 +85,35 @@ abstract class UserStoreBase with Store {
       debugPrint('usuário ou senha incorreto');
     }
   }
+
+  //Chamada de Cadastro
+    Future<RegisterModel> userRegister(
+      {required String email,
+      required String password,
+      required String name,
+      required String acessCode}) async {
+    try {
+      final response = await service.post(route: '/auth/cadastrar', body: {
+        "email": email,
+        "senha": password,
+        "nome": name,
+        "codigoAcesso": acessCode
+      });
+      if (response.statusCode == 201) {
+        Modular.to.pushNamed('/login/');
+        final user = RegisterModel.fromJson(response.body);
+        return user;
+      }
+      throw HttpException(response.reasonPhrase);
+    } on SocketException {
+      throw Failure(message: 'Falha de Conexão');
+    } on HttpException {
+      throw Failure(message: 'Alouca');
+    } on FormatException {
+      throw Failure(message: 'test');
+    } catch (e) {
+      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
+    }
+  }
+
 }
