@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:rarguile/src/modules/registration_page/models/register_model.dart';
+import 'package:rarguile/src/shared/stores/user_store.dart';
 
-import 'register_datasource.dart';
 part 'registration_store.g.dart';
 
 class RegistrationStore = RegistrationStoreBase with _$RegistrationStore;
 
 abstract class RegistrationStoreBase with Store {
   final GlobalKey<FormState> registrationPage = GlobalKey<FormState>();
-  late RegisterDataSource registerDataSource;
+  late UserStore userStore;
 
-  RegistrationStoreBase({RegisterDataSource? registerDataSource}) {
-    this.registerDataSource = registerDataSource!;
+  RegistrationStoreBase({UserStore? userStore}) {
+    this.userStore = userStore!;
   }
 
   @observable
@@ -24,17 +24,14 @@ abstract class RegistrationStoreBase with Store {
     registerModel = registerModel.copyWith(
         nome: name, codigoAcesso: acessCode, email: email, senha: password);
   }
+
   @action
-  Future<void> registerUser(
-      {String? email,
-      String? password,
-      String? name,
-      String? codigoAcesso}) async {
-    await registerDataSource.register(
-      acessCode: 'codigoAcesso',
-      email: 'email',
-      password: 'senha',
-      name: 'nome',
+  Future<void> register() async {
+    await userStore.userRegister(
+      acessCode: registerModel.codigoAcesso!,
+      email: registerModel.email!,
+      password: registerModel.senha!,
+      name: registerModel.nome!,
     );
   }
 }

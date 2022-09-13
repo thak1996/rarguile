@@ -61,11 +61,11 @@ mixin _$LoginStore on LoginStoreBase, Store {
       ActionController(name: 'LoginStoreBase', context: context);
 
   @override
-  void setLogin({String? email, String? password}) {
+  void setLoginUser({String? email, String? password}) {
     final _$actionInfo = _$LoginStoreBaseActionController.startAction(
-        name: 'LoginStoreBase.setLogin');
+        name: 'LoginStoreBase.setLoginUser');
     try {
-      return super.setLogin(email: email, password: password);
+      return super.setLoginUser(email: email, password: password);
     } finally {
       _$LoginStoreBaseActionController.endAction(_$actionInfo);
     }
