@@ -6,9 +6,9 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_card.dart';
 import 'package:rarguile/src/modules/home_page_users/controller/home_store.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/shared/stores/user_store.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import '../models/home_model.dart';
 
 class HomePageUsers extends StatefulWidget {

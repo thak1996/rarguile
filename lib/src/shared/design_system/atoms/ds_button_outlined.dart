@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 
 class DsOutlinedButton extends StatelessWidget {
   const DsOutlinedButton({

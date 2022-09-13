@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
 
 class ConfirmChangePassPage extends StatefulWidget {

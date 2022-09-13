@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class YTVideo extends StatefulWidget {
