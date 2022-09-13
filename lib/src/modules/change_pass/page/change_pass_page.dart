@@ -6,7 +6,6 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../shared/design_system/molecules/ds_app_bar.dart';
 

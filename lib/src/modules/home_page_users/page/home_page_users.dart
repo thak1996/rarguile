@@ -1,4 +1,3 @@
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
@@ -7,7 +6,6 @@ import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_card.dart';
 import 'package:rarguile/src/modules/home_page_users/controller/home_store.dart';
 import 'package:rarguile/src/shared/constants/app_colors.dart';
-import 'package:rarguile/src/shared/stores/user_store.dart';
 import 'package:rarguile/src/shared/constants/styles.dart';
 import '../models/home_model.dart';
 

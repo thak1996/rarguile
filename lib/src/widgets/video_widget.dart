@@ -4,7 +4,6 @@ import 'package:rarguile/src/shared/constants/app_colors.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({super.key, required this.videoUrl});
-
   final String videoUrl;
 
   @override
