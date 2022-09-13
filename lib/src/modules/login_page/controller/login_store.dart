@@ -27,8 +27,8 @@ abstract class LoginStoreBase with Store {
   }
 
   @action
-  Future<void> login() async {
-    await userStore.userLogin(
+  Future<void> login({required BuildContext context})async {
+    await userStore.userLogin(context: context,
       email: accountModel.email!,
       password: accountModel.password!,
     );

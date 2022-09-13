@@ -30,8 +30,9 @@ abstract class RegistrationStoreBase with Store {
   }
 
   @action
-  Future<void> register() async {
+  Future<void> register({required BuildContext context}) async {
     await userStore.userRegister(
+      context: context,
       acessCode: registerModel.codigoAcesso!,
       email: registerModel.email!,
       password: registerModel.senha!,

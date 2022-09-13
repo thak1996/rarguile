@@ -24,48 +24,50 @@ class _ChangePassPageState extends State<ChangePassPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const DsAppBar(title: '', showLoginBtn: true),
-      body: Form(
-        key: widget.store.requestCodeKey,
-        child: Container(
-          height: screenSize(context).height,
-          width: screenSize(context).width,
-          decoration: const BoxDecoration(color: whiteColor),
-          child: Padding(
-            padding: EdgeInsets.only(
-              right: screenSize(context).width * .1,
-              left: screenSize(context).width * .1,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.only(right: screenSize(context).width * 0.43),
-                  child: const Text(
-                    'Digite seu email.',
-                    style: h5Primary,
-                    textAlign: TextAlign.start,
+      body: SafeArea(
+        child: Form(
+          key: widget.store.requestCodeKey,
+          child: Container(
+            height: screenSize(context).height,
+            width: screenSize(context).width,
+            decoration: const BoxDecoration(color: whiteColor),
+            child: Padding(
+              padding: EdgeInsets.only(
+                right: screenSize(context).width * .1,
+                left: screenSize(context).width * .1,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsets.only(right: screenSize(context).width * 0.43),
+                    child: const Text(
+                      'Digite seu email.',
+                      style: h5Primary,
+                      textAlign: TextAlign.start,
+                    ),
                   ),
-                ),
-                SizedBox(height: screenSize(context).height * .1),
-                DsInputField(
-                  hintText: 'Digite o seu email',
-                  keyboardType: TextInputType.emailAddress,
-                  labelText: 'Digite o seu email',
-                  validator: Validator.validateEmail,
-                  controller: emailController,
-                ),
-                SizedBox(height: screenSize(context).height * .1),
-                DsOutlinedButton(
-                  label: 'Confirmar',
-                  onPressed: () {
-                    widget.store.requestCodeKey.currentState!.validate()
-                        ? widget.store.requestCode(email: emailController.text)
-                        : debugPrint('Dados incorretos');
-                  },
-                ),
-              ],
+                  SizedBox(height: screenSize(context).height * .1),
+                  DsInputField(
+                    hintText: 'Digite o seu email',
+                    keyboardType: TextInputType.emailAddress,
+                    labelText: 'Digite o seu email',
+                    validator: Validator.validateEmail,
+                    controller: emailController,
+                  ),
+                  SizedBox(height: screenSize(context).height * .1),
+                  DsOutlinedButton(
+                    label: 'Confirmar',
+                    onPressed: () {
+                      widget.store.requestCodeKey.currentState!.validate()
+                          ? widget.store.requestCode(email: emailController.text)
+                          : debugPrint('Dados incorretos');
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

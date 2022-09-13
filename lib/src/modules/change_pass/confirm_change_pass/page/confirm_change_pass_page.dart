@@ -69,6 +69,7 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
                   onPressed: () {
                     widget.store.requestCodeKey.currentState!.validate()
                         ? widget.store.newPassword(
+                            context: context,
                             code: codeController.text,
                             newPassword: passwordController.text)
                         : debugPrint('Dados incorretos');

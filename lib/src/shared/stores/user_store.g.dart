@@ -67,9 +67,12 @@ mixin _$UserStore on UserStoreBase, Store {
       AsyncAction('UserStoreBase.userLogin', context: context);
 
   @override
-  Future<void> userLogin({required String email, required String password}) {
-    return _$userLoginAsyncAction
-        .run(() => super.userLogin(email: email, password: password));
+  Future<void> userLogin(
+      {required BuildContext context,
+      required String email,
+      required String password}) {
+    return _$userLoginAsyncAction.run(() =>
+        super.userLogin(context: context, email: email, password: password));
   }
 
   late final _$UserStoreBaseActionController =
