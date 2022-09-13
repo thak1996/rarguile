@@ -5,8 +5,6 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/shared/constants/styles.dart';
 
-import 'package:flutter_modular/flutter_modular.dart';
-
 class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DsAppBar({
     super.key,
