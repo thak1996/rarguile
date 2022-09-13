@@ -20,18 +20,6 @@ mixin _$LoginStore on LoginStoreBase, Store {
   late final _$loginModelAtom =
       Atom(name: 'LoginStoreBase.loginModel', context: context);
 
-  @override
-  LoginModel get loginModel {
-    _$loginModelAtom.reportRead();
-    return super.loginModel;
-  }
-
-  @override
-  set loginModel(LoginModel value) {
-    _$loginModelAtom.reportWrite(value, super.loginModel, () {
-      super.loginModel = value;
-    });
-  }
 
   late final _$_obscureTextCustomAtom =
       Atom(name: 'LoginStoreBase._obscureTextCustom', context: context);
@@ -82,11 +70,4 @@ mixin _$LoginStore on LoginStoreBase, Store {
     }
   }
 
-  @override
-  String toString() {
-    return '''
-loginModel: ${loginModel},
-obscureText: ${obscureText}
-    ''';
-  }
 }
