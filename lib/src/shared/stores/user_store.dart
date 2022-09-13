@@ -6,7 +6,7 @@ import 'package:mobx/mobx.dart';
 import 'package:rarguile/src/modules/login_page/models/account_model.dart';
 import 'package:rarguile/src/modules/registration_page/models/register_model.dart';
 import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
-import 'package:rarguile/src/shared/failure.dart';
+import 'package:rarguile/src/shared/constants/failure.dart';
 
 import '../../modules/home_page_users/models/home_model.dart';
 
@@ -115,5 +115,8 @@ abstract class UserStoreBase with Store {
       throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
     }
   }
+
+  //Chamada de trocar senha
+  
 
 }
