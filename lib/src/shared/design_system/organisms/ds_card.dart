@@ -11,12 +11,14 @@ class DsCard extends StatelessWidget {
     this.title = '',
     this.text = '',
     this.date = '',
+    required this.onTap,
   });
 
   final String title;
   final String text;
   final Route? route;
   final String date;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,39 +27,36 @@ class DsCard extends StatelessWidget {
       color: fillBackground,
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       child: InkWell(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child:
-                        DsText(text: title, style: subTitleBold, maxLines: 1),
-                  ),
-                  DsText(
-                    text: date,
-                    style: subTitleBoldPrimary.copyWith(
-                        fontWeight: FontWeight.w400),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6.0),
-                child: TextWidget(
-                  finalText: text,
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child:
+                          DsText(text: title, style: subTitleBold, maxLines: 1),
+                    ),
+                    DsText(
+                      text: date,
+                      style: subTitleBoldPrimary.copyWith(
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-        ),
-        onTap: () {
-          Navigator.push(context, route!);
-        },
-      ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 6.0),
+                  child: TextWidget(
+                    finalText: text,
+                  ),
+                ),
+              ],
+            ),
+          )),
     );
   }
 }
