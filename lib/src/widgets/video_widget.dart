@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({super.key, required this.videoUrl});
-
   final String videoUrl;
 
   @override

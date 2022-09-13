@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_button_icon.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 

@@ -1,7 +1,7 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 
 class SplashArt extends StatefulWidget {
   const SplashArt({super.key});

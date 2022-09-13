@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_description.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_related.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/widgets/hide_show_widget.dart';
 import 'package:rarguile/src/widgets/video_widget.dart';
 
