@@ -45,6 +45,12 @@ dependencies:
   youtube_player_flutter: ^8.1.0
   readmore: ^2.2.0
   flutter_mobx: ^2.0.6+1
+  flutter_modular: ^5.0.3
+  http: ^0.13.5
+  flutter_lints: ^2.0.0
+  build_runner: ^2.2.0
+  mobx_codegen: ^2.0.7
+  flutter_inappwebview: ^5.4.3+7
 
 dev_dependencies:
   flutter_test:
@@ -55,11 +61,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  http: ^0.13.5
-  flutter_modular: ^5.0.3
-  flutter_lints: ^2.0.0
-  build_runner: ^2.2.0
-  mobx_codegen: ^2.0.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

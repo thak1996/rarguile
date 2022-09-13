@@ -5,18 +5,13 @@ import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
 class DsRelated extends StatefulWidget {
-  const DsRelated({
-    super.key,
-  });
+  const DsRelated({super.key});
 
   @override
   State<DsRelated> createState() => _DsRelatedState();
 }
 
 class _DsRelatedState extends State<DsRelated> {
-  //TODO
-  // late Controller controller;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +26,6 @@ class _DsRelatedState extends State<DsRelated> {
             text: 'Relacionados',
             style: subTitleBoldPrimary,
           ),
-
           // TODO
           // FutureBuilder<List<VideosModel>>(
           //   future: controller.getData(),

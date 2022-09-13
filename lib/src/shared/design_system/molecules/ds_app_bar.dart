@@ -4,12 +4,15 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
 import 'package:rarguile/src/shared/styles.dart';
 
+import 'package:flutter_modular/flutter_modular.dart';
+
 class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DsAppBar(
-      {super.key,
-      required this.title,
-      this.onPressed,
-      required this.showLoginBtn});
+  const DsAppBar({
+    super.key,
+    required this.title,
+    this.onPressed,
+    required this.showLoginBtn,
+  });
 
   final String title;
   final VoidCallback? onPressed;
@@ -39,7 +42,7 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
                 DSIconButton(
                   icon: const Icon(Icons.login),
                   onPressed: () {
-                    onPressed;
+                    Modular.to.navigate('/login/');
                   },
                 ),
               ],

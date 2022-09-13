@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/modules/change_pass/module/change_pass_page_module.dart';
+import 'package:rarguile/src/modules/home_page_users/home_visitors/module/home_visitors_module.dart';
 import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
 import 'package:rarguile/src/service/http_service.dart';
 import 'package:rarguile/src/service/shared_preferences_service.dart';
@@ -22,6 +23,7 @@ class AppModule extends Module {
         ChildRoute(Modular.initialRoute,
             child: (context, args) => const SplashArt()),
         ModuleRoute('/login/', module: LoginPageModule()),
+        ModuleRoute('/home/visitors/', module: HomeVisitornsModule()),
         ModuleRoute('/home/users/', module: HomePageUsersModule()),
         ModuleRoute('/registration/', module: RegistrationPageModule()),
         ModuleRoute('/changePass/', module: ChangePassPageModule()),
