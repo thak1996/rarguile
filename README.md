@@ -1,4 +1,4 @@
-<p align="center"><img src="screenshots/RaroTube.png"></p>
+<p align="center"><img src="screenshots/RaroTube.jpg"></p>
 
 # Rarguile
 
