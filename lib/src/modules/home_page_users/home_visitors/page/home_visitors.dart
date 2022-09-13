@@ -1,13 +1,14 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/modules/home_page_users/models/home_model.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_card.dart';
 import 'package:rarguile/src/modules/home_page_users/controller/home_store.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
 
 class HomePageVisitors extends StatefulWidget {
   const HomePageVisitors({super.key, required this.store});
@@ -20,7 +21,8 @@ class _HomePageVisitorsState extends State<HomePageVisitors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DsAppBar(title: 'Raro Tube - Visitantes', showLoginBtn: true),
+      appBar:
+          const DsAppBar(title: 'Raro Tube - Visitantes', showLoginBtn: true),
       body: FutureBuilder<List<VideosModel>>(
         future: widget.store.getVideos(),
         builder: (context, snapshot) {
@@ -54,6 +56,10 @@ class _HomePageVisitorsState extends State<HomePageVisitors> {
                             ],
                           ),
                           DsCard(
+                            onTap: () {
+                              Modular.to.pushNamed('/details/guest/',
+                                  arguments: videos[index]);
+                            },
                             title: video.nome,
                             text: video.descricao,
                             date: formatDate(

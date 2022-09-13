@@ -6,6 +6,7 @@ import 'package:mobx/mobx.dart';
 import 'package:rarguile/src/modules/login_page/models/account_model.dart';
 import 'package:rarguile/src/modules/registration_page/models/register_model.dart';
 import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
 import 'package:rarguile/src/shared/constants/failure.dart';
 
 import '../../modules/home_page_users/models/home_model.dart';
@@ -71,23 +72,36 @@ abstract class UserStoreBase with Store {
   //Chamada de Login
   @action
   Future<void> userLogin(
-      {required String email, required String password}) async {
-    Map<String, dynamic> body = {'email': email, 'senha': password};
-    var response = await service.post(route: 'auth/login', body: body);
-    if (response.statusCode == 200) {
-      AccountModel user = AccountModel.fromMap(jsonDecode(response.body));
-      setCurrentUser(userModel: user);
-      setToken();
-      getAllVideos();
-      Modular.to.navigate('/home/users/');
-    } else {
-      debugPrint('usuário ou senha incorreto');
+      {required BuildContext context,required String email, required String password}) async {
+    try {
+      Map<String, dynamic> body = {'email': email, 'senha': password};
+      var response = await service.post(route: 'auth/login', body: body);
+      if (response.statusCode == 200) {
+        AccountModel user = AccountModel.fromMap(jsonDecode(response.body));
+        setCurrentUser(userModel: user);
+        setToken();
+        getAllVideos();
+        Modular.to.navigate('/home/users/');
+        return;
+      } else if (response.statusCode == 401) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Usuário ou senha incorreto'), backgroundColor: azulMaximum,));
+        return;
+      }
+      throw HttpException(response.reasonPhrase);
+    } on SocketException {
+      throw Failure(message: 'Falha de Conexão');
+    } on HttpException {
+      throw Failure(message: 'Alouca');
+    } on FormatException {
+      throw Failure(message: 'test');
+    } catch (e) {
+      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
     }
   }
 
   //Chamada de Cadastro
   Future<RegisterModel> userRegister(
-      {required String email,
+      {required BuildContext context, required String email,
       required String password,
       required String name,
       required String acessCode}) async {
@@ -99,6 +113,7 @@ abstract class UserStoreBase with Store {
         "codigoAcesso": acessCode
       });
       if (response.statusCode == 201) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Cadastro realizado com sucesso! Faça seu primeiro login '), backgroundColor: azulMaximum,));
         Modular.to.pushNamed('/login/');
         final user = RegisterModel.fromJson(response.body);
         return user;
@@ -136,12 +151,13 @@ abstract class UserStoreBase with Store {
 
   ///Chamada de nova senha
   Future<void> setNewPassword(
-      {required String code, required String newPassword}) async {
+      {required BuildContext context, required String code, required String newPassword}) async {
     try {
       final response = await service.patch(
           route: '/auth/recuperar-senha',
           body: {"codigo": code, "novaSenha": newPassword});
       if (response.statusCode == 201) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Senha alterada com sucesso!'), backgroundColor: azulMaximum,));
         Modular.to.navigate('/login/');
       }
     } on SocketException {

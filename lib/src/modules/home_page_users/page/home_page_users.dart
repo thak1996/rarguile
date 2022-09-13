@@ -1,5 +1,6 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
 import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
@@ -54,6 +55,10 @@ class _HomePageUsersState extends State<HomePageUsers> {
                             ],
                           ),
                           DsCard(
+                            onTap: () {
+                              Modular.to.pushNamed('/details/',
+                                  arguments: videos[index]);
+                            },
                             title: video.nome,
                             text: video.descricao,
                             date: formatDate(
