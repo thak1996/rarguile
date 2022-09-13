@@ -7,13 +7,11 @@ class ChangePassStore = ChangePassStoreBase with _$ChangePassStore;
 
 abstract class ChangePassStoreBase with Store {
   final GlobalKey<FormState> requestCodeKey = GlobalKey<FormState>();
-  final GlobalKey<FormState> changePassKey = GlobalKey<FormState>();
   late UserStore userStore;
 
   ChangePassStoreBase({UserStore? userStore}) {
     this.userStore = userStore!;
   }
-
 
   @action
   Future<void> requestCode({required String email}) async {

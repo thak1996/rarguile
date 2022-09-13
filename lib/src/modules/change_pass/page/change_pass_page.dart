@@ -8,6 +8,8 @@ import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../shared/design_system/molecules/ds_app_bar.dart';
+
 class ChangePassPage extends StatefulWidget {
   const ChangePassPage({super.key, required this.store});
   final ChangePassStore store;
@@ -23,6 +25,7 @@ class _ChangePassPageState extends State<ChangePassPage> {
   Widget build(BuildContext context) {
     //TODO: inserir appBar para termos opção de voltar
     return Scaffold(
+      appBar: const DsAppBar(title: '', showLoginBtn: true),
       body: Form(
         key: widget.store.requestCodeKey,
         child: Container(
@@ -47,9 +50,8 @@ class _ChangePassPageState extends State<ChangePassPage> {
                     textAlign: TextAlign.start,
                   ),
                 ),
-                SizedBox(height: screenSize(context).height * .2),
+                SizedBox(height: screenSize(context).height * .1),
                 DsInputField(
-                  onChanged: (p0) {},
                   hintText: 'Digite o seu email',
                   keyboardType: TextInputType.emailAddress,
                   labelText: 'Digite o seu email',

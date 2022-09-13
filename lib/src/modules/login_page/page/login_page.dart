@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Padding(
             padding: const EdgeInsets.only(right: 50, left: 50),
             child: Form(
-              key: widget.store.loginKey,
+              key: widget.store.key,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,10 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
                     onPressed: () {
-                      widget.store.loginKey.currentState!.validate()
+                      widget.store.key.currentState!.validate()
                           ? widget.store.login()
-                          : debugPrint('Dados incorretos');
-                        
+                          : const Text('Dados incorretos');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

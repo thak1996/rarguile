@@ -23,7 +23,7 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: widget.store.changePassKey,
+        key: widget.store.requestCodeKey,
         child: Container(
           height: screenSize(context).height,
           width: screenSize(context).width,
@@ -48,15 +48,13 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
                 ),
                 SizedBox(height: screenSize(context).height * .1),
                 DsInputField(
-                  onChanged: (p0) {},
                   hintText: 'Digite o código aqui',
                   keyboardType: TextInputType.number,
                   labelText: 'Digite o código aqui',
-                  //validator: Validator.validateCode,
                   controller: codeController,
                 ),
+                SizedBox(height: screenSize(context).height * .1),
                 DsInputField(
-                  onChanged: (p0) {},
                   hintText: 'Digite a nova senha aqui',
                   keyboardType: TextInputType.number,
                   labelText: 'Nova Senha',
@@ -67,8 +65,6 @@ class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
-                    print(codeController.text);
-                    print(passwordController.text);
                     widget.store.requestCodeKey.currentState!.validate()
                         ? widget.store.newPassword(
                             code: codeController.text,

@@ -123,7 +123,6 @@ abstract class UserStoreBase with Store {
       if (response.statusCode == 201) {
         Modular.to.navigate('/changePass/confirmation/');
       }
-      throw HttpException(response.reasonPhrase);
     } on SocketException {
       throw Failure(message: 'Falha de Conexão');
     } on HttpException {
@@ -135,6 +134,7 @@ abstract class UserStoreBase with Store {
     }
   }
 
+  ///Chamada de nova senha
   Future<void> setNewPassword(
       {required String code, required String newPassword}) async {
     try {
@@ -144,7 +144,6 @@ abstract class UserStoreBase with Store {
       if (response.statusCode == 201) {
         Modular.to.navigate('/login/');
       }
-      throw HttpException(response.reasonPhrase);
     } on SocketException {
       throw Failure(message: 'Falha de Conexão');
     } on HttpException {
