@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:readmore/readmore.dart';
 
 class TextWidget extends StatefulWidget {

@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:rarguile/src/modules/change_pass/controller/change_pass_store.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_button_outlined.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
+import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
 
-class ConfirmRegistrationPage extends StatefulWidget {
-  const ConfirmRegistrationPage({super.key});
+class ConfirmChangePassPage extends StatefulWidget {
+  const ConfirmChangePassPage({super.key, required this.store});
+  final ChangePassStore store;
 
   @override
-  State<ConfirmRegistrationPage> createState() =>
-      _ConfirmRegistrationPageState();
+  State<ConfirmChangePassPage> createState() => _ConfirmChangePassPageState();
 }
 
-class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
+class _ConfirmChangePassPageState extends State<ConfirmChangePassPage> {
   TextEditingController codeController = TextEditingController();
-  final formMasterKey = GlobalKey<FormState>();
-  
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const DsAppBar(title: '',showLoginBtn: true,),
       body: Form(
+        key: widget.store.requestCodeKey,
         child: Container(
           height: screenSize(context).height,
           width: screenSize(context).width,
@@ -45,16 +49,29 @@ class _ConfirmRegistrationPageState extends State<ConfirmRegistrationPage> {
                   ),
                 ),
                 SizedBox(height: screenSize(context).height * .1),
-                const DsInputField(
+                DsInputField(
                   hintText: 'Digite o código aqui',
                   keyboardType: TextInputType.number,
                   labelText: 'Digite o código aqui',
-                  validator: Validator.validateCode,
+                  controller: codeController,
+                ),
+                SizedBox(height: screenSize(context).height * .02),
+                DsInputField(
+                  hintText: 'Digite a nova senha aqui',
+                  keyboardType: TextInputType.number,
+                  labelText: 'Nova Senha',
+                  validator: Validator.validatePassword,
+                  controller: passwordController,
                 ),
                 SizedBox(height: screenSize(context).height * .1),
                 DsOutlinedButton(
                   label: 'Confirmar',
                   onPressed: () {
+                    widget.store.requestCodeKey.currentState!.validate()
+                        ? widget.store.newPassword(
+                            code: codeController.text,
+                            newPassword: passwordController.text)
+                        : debugPrint('Dados incorretos');
                   },
                 ),
               ],

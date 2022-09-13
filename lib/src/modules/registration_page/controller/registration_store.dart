@@ -22,7 +22,11 @@ abstract class RegistrationStoreBase with Store {
   void setRegisterUser(
       {String? name, String? password, String? email, String? acessCode}) {
     registerModel = registerModel.copyWith(
-        nome: name, codigoAcesso: acessCode, email: email, senha: password);
+      nome: name,
+      codigoAcesso: acessCode,
+      email: email,
+      senha: password,
+    );
   }
 
   @action

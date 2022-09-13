@@ -5,8 +5,8 @@ import 'package:rarguile/src/shared/design_system/atoms/ds_input.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_input_password.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_mediaquery.dart';
 import 'package:rarguile/src/shared/design_system/atoms/ds_text.dart';
-import 'package:rarguile/src/shared/app_colors.dart';
-import 'package:rarguile/src/shared/styles.dart';
+import 'package:rarguile/src/shared/constants/app_colors.dart';
+import 'package:rarguile/src/shared/constants/styles.dart';
 import 'package:rarguile/src/shared/validation/validator.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Padding(
             padding: const EdgeInsets.only(right: 50, left: 50),
             child: Form(
-              key: widget.store.loginKey,
+              key: widget.store.key,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,10 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                     backGroundColor: whiteColor,
                     textStyle: h6Primary,
                     onPressed: () {
-                      widget.store.loginKey.currentState!.validate()
+                      widget.store.key.currentState!.validate()
                           ? widget.store.login()
-                          : debugPrint('Dados incorretos');
-                        
+                          : const Text('Dados incorretos');
                     },
                   ),
                   SizedBox(height: screenSize(context).height * .014),

@@ -23,19 +23,19 @@ class HttpService implements IApiService {
   }
 
   @override
-  Future patch({required String route, Map? body}) {
-    throw UnimplementedError();
+  Future patch({required String route, Map? body}) async {
+    Uri url = Uri.http(baseURL, route);
+    var response = await http.patch(url, body: body);
+    return response;
   }
 
   @override
-  Future post(
-      {required String route,
-      Map<String, dynamic>? body,
-      Map<String, String>? headers}) async {
+  Future post({required String route, Map<String, dynamic>? body, Map<String, String>? headers}) async {
     Uri url = Uri.http(baseURL, route);
     var response = await http.post(url, body: body);
     return response;
   }
+  
 
   @override
   Future put({required String route, Map? body}) {
