@@ -1,4 +1,4 @@
-<p align="center"><img src="screenshots/RaroTube.jpg"></p><br>
+<p align="center"><img src="screenshots/RaroTube.png"></p>
 
 # Rarguile
 
@@ -17,7 +17,6 @@
 
 <p align="center"><img src="screenshots/loginpage.png"></p>
 
-<br>
 
 ## **Funcionalidades**
 
