@@ -1,4 +1,45 @@
-#RarGuile
+<p align="center"><img src="screenshots/RaroTube.jpg"></p>
+
+# Rarguile
+
+<p align="center">
+ <a href="#description">Descrição</a> •
+ <a href="#funcionalidades">Funcionalidades</a> • 
+ <a href="#usodoprojeto">Suporte e Autores do Projeto</a> • 
+</p><br>
+
+## **Descrição**
+
+> O projeto **Rarguile** foi criado na intenção de facilitar a vida de nossos usuários em relação aos seus estudos voltados para a empresa **Raro Academy**.
+
+
+<p align="center"><img src="screenshots/loginpage.png"></p>
+
+
+## **Funcionalidades**
+
+> O aplicativo permite a exibição das vídeos aulas de acordo com cada turma, desta forma, o usuário pode **criar conta**,**recuperar senha**, **assistir suas aulas**, **favoritar seus vídeos** assim como **comentar** o mesmo.
+
+<br>
+
+## **Uso do Projeto**
+
+> Assim que o aplicativo é iniciado, o usuário será redirecionado para a parte de visitantes, aonde irá poder assistir vídeos disponibilizados para o usuário conhecer. Ao reparar, na parte da Appbar, terá um botão que permite o usuário ir para a tela de login, aonde ele poderá realizar a entrada do App e consultar vídeos especializados para sua turma.
+
+<br>
+
+## **Suporte e Autores do Projeto**
+
+> Para poder entrar em contato com um de nossos desenvolvedores.
+
+- [Luis de Napoli](https://www.linkedin.com/in/luisnapoli/)
+- [Claudevânio de Jesus](https://www.linkedin.com/in/claudev%C3%A2nio-de-jesus-7a1a90216/)
+- [Franklyn Viana dos Santos](https://www.linkedin.com/in/franklyn-viana-dos-santos-553314169/)
+
+<br> <br>
+
+<h4 align="center"> 🚧 Projeto em construção... 🚧 </h4>
+<!-- #RarGuile
 
 <b>Olá Nobres guerreiros!</b>
 
@@ -34,4 +75,4 @@ dê um clique único em cima da Issue, será aberto uma tela do lado direito, es
 
 Mantenha seus Pull e Push sempre em dia, e Mãos a Obra!
 
-OBS: Estou ciente que iremos recriar nosso Readme.me para apresentar o projeto, mas vamos deixar assim por enquanto para auxiliar nossa equipe
+OBS: Estou ciente que iremos recriar nosso Readme.me para apresentar o projeto, mas vamos deixar assim por enquanto para auxiliar nossa equipe -->

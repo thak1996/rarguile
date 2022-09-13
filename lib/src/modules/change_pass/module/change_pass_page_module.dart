@@ -6,13 +6,15 @@ import '../page/change_pass_page.dart';
 
 class ChangePassPageModule extends Module {
   @override
-  List<Bind<Object>> get binds => [Bind<ChangePassStore>((index) => ChangePassStore(userStore: index()))];
+  List<Bind<Object>> get binds =>
+      [Bind<ChangePassStore>((index) => ChangePassStore(userStore: index()))];
 
   @override
   List<ModularRoute> get routes => [
         ChildRoute(Modular.initialRoute,
-            child: (context, args) =>  ChangePassPage(store: Modular.get(),)),
+            child: (context, args) => ChangePassPage(store: Modular.get())),
         ChildRoute('/confirmation/',
-            child: (context, args) =>  ConfirmChangePassPage(store: Modular.get(),)),
+            child: (context, args) =>
+                ConfirmChangePassPage(store: Modular.get())),
       ];
 }

@@ -1,5 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/modules/change_pass/module/change_pass_page_module.dart';
+import 'package:rarguile/src/modules/detail_page/module/detail_page_module.dart';
+import 'package:rarguile/src/modules/detail_page/module/detail_page_module_guest.dart';
 import 'package:rarguile/src/modules/home_page_users/home_visitors/module/home_visitors_module.dart';
 import 'package:rarguile/src/service/interfaces/api_service_interface.dart';
 import 'package:rarguile/src/service/http_service.dart';
@@ -27,5 +29,7 @@ class AppModule extends Module {
         ModuleRoute('/home/users/', module: HomePageUsersModule()),
         ModuleRoute('/registration/', module: RegistrationPageModule()),
         ModuleRoute('/changePass/', module: ChangePassPageModule()),
+        ModuleRoute('/details/', module: DetailModule()),
+        ModuleRoute('/details/guest/', module: DetailModuleGuest()),
       ];
 }
