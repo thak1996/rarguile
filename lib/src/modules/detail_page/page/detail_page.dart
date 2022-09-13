@@ -24,7 +24,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      appBar: DsAppBar(title: widget.videos.nome, showLoginBtn: false),
+      appBar: DsAppBar(title: 'Raro Tube', showLoginBtn: false),
       body: ListView(
         children: [
           Column(

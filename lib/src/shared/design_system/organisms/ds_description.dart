@@ -34,9 +34,12 @@ class _DsDescriptionState extends State<DsDescription> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DsText(
-                text: widget.title,
-                style: subTitleBoldPrimary,
+              Flexible(
+                child: DsText(
+                  overflow: TextOverflow.ellipsis,
+                  text: widget.title,
+                  style: subTitleBoldPrimary,
+                ),
               ),
               ValueListenableBuilder<bool>(
                 valueListenable: isFavorite,
@@ -53,6 +56,7 @@ class _DsDescriptionState extends State<DsDescription> {
             ],
           ),
           DsText(
+            overflow: TextOverflow.fade,
             text: widget.description,
             style: inputPrimary,
           ),

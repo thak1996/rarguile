@@ -8,9 +8,9 @@ import 'package:rarguile/src/widgets/hide_show_widget.dart';
 import 'package:rarguile/src/widgets/yt_video_widget.dart';
 
 class DetailPageGuest extends StatefulWidget {
-  const DetailPageGuest({super.key, required this.videos});
+  const DetailPageGuest({super.key, required this.videosGuest});
 
-  final VideosModel videos;
+  final VideosModel videosGuest;
 
   @override
   State<DetailPageGuest> createState() => _DetailPageGuestState();
@@ -21,16 +21,16 @@ class _DetailPageGuestState extends State<DetailPageGuest> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      appBar: DsAppBar(
-          title: widget.videos.nome, onPressed: () {}, showLoginBtn: true),
+      appBar:
+          DsAppBar(title: 'Raro Tube', onPressed: () {}, showLoginBtn: true),
       body: ListView(
         children: [
           Column(
             children: [
-              YTVideo(videoUrl: widget.videos.url),
+              YTVideo(videoUrl: widget.videosGuest.url),
               DsDescription(
-                title: widget.videos.nome,
-                description: widget.videos.descricao,
+                title: widget.videosGuest.nome,
+                description: widget.videosGuest.descricao,
               ),
               const HideShow(),
               const DsRelated(),

@@ -57,7 +57,7 @@ class _HomePageVisitorsState extends State<HomePageVisitors> {
                           ),
                           DsCard(
                             onTap: () {
-                              Modular.to.pushNamed('/details/',
+                              Modular.to.pushNamed('/details/guest/',
                                   arguments: videos[index]);
                             },
                             title: video.nome,
