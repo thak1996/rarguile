@@ -16,7 +16,7 @@ class _SplashArtState extends State<SplashArt> {
     Future.delayed(
       const Duration(seconds: 2),
     ).then(
-      (value) => Modular.to.navigate('/login/'),
+      (value) => Modular.to.navigate('/home/visitors/'),
     );
     super.initState();
   }
