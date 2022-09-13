@@ -13,7 +13,6 @@
 
 > O projeto **Rarguile** foi criado na intenção de facilitar a vida de nossos usuários em relação aos seus estudos voltados para a empresa **Raro Academy**.
 
-<br>
 
 <p align="center"><img src="screenshots/loginpage.png"></p>
 
@@ -34,7 +33,7 @@
 
 > Para poder entrar em contato com um de nossos desenvolvedores.
 
-- [Luis de Napoli](linkedin.com/in/luisnapoli/)
+- [Luis de Napoli](https://www.linkedin.com/in/luisnapoli/)
 - [Claudevânio de Jesus](https://www.linkedin.com/in/claudev%C3%A2nio-de-jesus-7a1a90216/)
 - [Franklyn Viana dos Santos](https://www.linkedin.com/in/franklyn-viana-dos-santos-553314169/)
 
