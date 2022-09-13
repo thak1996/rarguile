@@ -19,8 +19,8 @@ abstract class ChangePassStoreBase with Store {
   }
 
   @action 
-  Future<void> newPassword({required String code, required String newPassword}) async {
-    await userStore.setNewPassword(code: code, newPassword: newPassword);
+  Future<void> newPassword({required BuildContext context, required String code, required String newPassword}) async {
+    await userStore.setNewPassword(context: context, code: code, newPassword: newPassword);
   }
   
 }

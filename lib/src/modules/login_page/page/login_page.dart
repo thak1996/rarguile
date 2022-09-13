@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                     textStyle: h6Primary,
                     onPressed: () {
                       widget.store.key.currentState!.validate()
-                          ? widget.store.login()
+                          ? widget.store.login(context: context)
                           : const Text('Dados incorretos');
                     },
                   ),

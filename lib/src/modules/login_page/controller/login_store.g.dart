@@ -53,8 +53,8 @@ mixin _$LoginStore on LoginStoreBase, Store {
       AsyncAction('LoginStoreBase.login', context: context);
 
   @override
-  Future<void> login() {
-    return _$loginAsyncAction.run(() => super.login());
+  Future<void> login({required BuildContext context}) {
+    return _$loginAsyncAction.run(() => super.login(context: context));
   }
 
   late final _$LoginStoreBaseActionController =

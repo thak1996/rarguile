@@ -2,7 +2,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rarguile/src/modules/change_pass/controller/change_pass_store.dart';
 
 import '../confirm_change_pass/page/confirm_change_pass_page.dart';
-import '../../new_password/page/new_pass_page.dart';
 import '../page/change_pass_page.dart';
 
 class ChangePassPageModule extends Module {
@@ -15,7 +14,5 @@ class ChangePassPageModule extends Module {
             child: (context, args) =>  ChangePassPage(store: Modular.get(),)),
         ChildRoute('/confirmation/',
             child: (context, args) =>  ConfirmChangePassPage(store: Modular.get(),)),
-        ChildRoute('/confirmation/newPass/',
-            child: (context, args) => const NewPassPage()),
       ];
 }
