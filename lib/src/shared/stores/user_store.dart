@@ -81,7 +81,7 @@ abstract class UserStoreBase with Store {
       getAllVideos();
       Modular.to.navigate('/home/users/');
     } else {
-      debugPrint('test');
+      debugPrint('usuário ou senha incorreto');
     }
   }
 }

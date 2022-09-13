@@ -7,23 +7,24 @@ import 'package:rarguile/src/shared/design_system/molecules/ds_app_bar.dart';
 import 'package:rarguile/src/shared/design_system/organisms/ds_card.dart';
 import 'package:rarguile/src/modules/home_page_users/controller/home_store.dart';
 import 'package:rarguile/src/shared/app_colors.dart';
+import 'package:rarguile/src/shared/stores/user_store.dart';
 import 'package:rarguile/src/shared/styles.dart';
 import '../models/home_model.dart';
 
 class HomePageUsers extends StatefulWidget {
-  const HomePageUsers({super.key});
+  const HomePageUsers({super.key, required this.store});
+  final HomeStore store;
   @override
   State<HomePageUsers> createState() => _HomePageUsersState();
 }
 
 class _HomePageUsersState extends State<HomePageUsers> {
-  final HomeStore userStore = Modular.get<HomeStore>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const DsAppBar(title: 'Raro Tube - Home', showLoginBtn: false),
       body: FutureBuilder<List<VideosModel>>(
-        future: userStore.getVideos(),
+        future: widget.store.getVideos(),
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             final List<VideosModel> videos = snapshot.data!.toList();
