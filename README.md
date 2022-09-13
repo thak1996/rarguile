@@ -5,8 +5,7 @@
 <p align="center">
  <a href="#description">Descrição</a> •
  <a href="#funcionalidades">Funcionalidades</a> • 
- <a href="#usodoprojeto">Uso do Projeto</a> • 
- <a href="#autores">Autores</a>
+ <a href="#usodoprojeto">Suporte e Autores do Projeto</a> • 
 </p><br>
 
 ## **Descrição**
