@@ -13,7 +13,7 @@ class DsInputField extends StatelessWidget {
     this.onPressed,
     this.validator,
     this.onSubmitted,
-    
+    this.controller
   });
 
   final TextInputType keyboardType;
@@ -25,6 +25,7 @@ class DsInputField extends StatelessWidget {
   final dynamic validator;
   final Function(String)? onChanged;
   final Function(String)? onSubmitted;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +72,7 @@ class DsInputField extends StatelessWidget {
         //Password
         onChanged: onChanged,
         onFieldSubmitted: onSubmitted,
+        controller: controller,
       ),
     );
   }

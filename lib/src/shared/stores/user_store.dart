@@ -10,7 +10,6 @@ import 'package:rarguile/src/shared/constants/failure.dart';
 
 import '../../modules/home_page_users/models/home_model.dart';
 
-
 part 'user_store.g.dart';
 
 class UserStore = UserStoreBase with _$UserStore;
@@ -87,7 +86,7 @@ abstract class UserStoreBase with Store {
   }
 
   //Chamada de Cadastro
-    Future<RegisterModel> userRegister(
+  Future<RegisterModel> userRegister(
       {required String email,
       required String password,
       required String name,
@@ -117,6 +116,43 @@ abstract class UserStoreBase with Store {
   }
 
   //Chamada de trocar senha
-  
+  Future<void> requestCodeToNewPassword({required String email}) async {
+    try {
+      final response = await service
+          .post(route: '/auth/solicitar-codigo', body: {"email": email});
+      if (response.statusCode == 201) {
+        Modular.to.navigate('/changePass/confirmation/');
+      }
+      throw HttpException(response.reasonPhrase);
+    } on SocketException {
+      throw Failure(message: 'Falha de Conexão');
+    } on HttpException {
+      throw Failure(message: 'Alouca');
+    } on FormatException {
+      throw Failure(message: 'test');
+    } catch (e) {
+      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
+    }
+  }
 
+  Future<void> setNewPassword(
+      {required String code, required String newPassword}) async {
+    try {
+      final response = await service.patch(
+          route: '/auth/recuperar-senha',
+          body: {"codigo": code, "novaSenha": newPassword});
+      if (response.statusCode == 201) {
+        Modular.to.navigate('/login/');
+      }
+      throw HttpException(response.reasonPhrase);
+    } on SocketException {
+      throw Failure(message: 'Falha de Conexão');
+    } on HttpException {
+      throw Failure(message: 'Alouca');
+    } on FormatException {
+      throw Failure(message: 'test');
+    } catch (e) {
+      throw Failure(message: 'Ocorreu um erro: ${e.toString()}');
+    }
+  }
 }
